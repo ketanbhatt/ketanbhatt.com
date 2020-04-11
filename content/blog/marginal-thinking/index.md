@@ -2,6 +2,8 @@
 title: "Avoid breaking habits with help from Economics"
 date: "2019-05-29"
 coverImage: "food-photographer-jennifer-pallian-306931-unsplash.jpg"
+redirect_from:
+  - /2019/05/29/avoid-breaking-habits-with-help-from-economics/
 ---
 
 Recently, while reading ["How Will You Measure Your Life?"](https://www.goodreads.com/book/show/13425570-how-will-you-measure-your-life?ac=1&from_search=true), I came across the concept of **Marginal Thinking** and I thought that it could be used as a mental model for motivating people who struggle with building new habits (like this guy I know, me).
@@ -13,15 +15,15 @@ Aside: I highly recommend reading ["How Will You Measure Your Life?"](https://ww
 Marginal Thinking is thinking in terms of a little bit more, or a little bit less. It talks about the "additional" or "incremental" cost of a decision, and it's benefits.
 
 > Has any of you ever been in a situation where you were deciding whether or not to have another piece of pie at a buffet? Or whether to hit that snooze button on the alarm and get a little bit more sleep before getting up? ...
-> 
+>
 > The additional piece of pie is the marginal piece of pie. The additional half hour is the marginal half an hour of sleep.
-> 
+>
 > Howard Baetjer ([source](https://www.libertarianism.org/guides/lectures/marginal-thinking) - visit for a deeper introduction)
 
 Marginal thinking is considered to be a good way of taking decision in Economics, but it is not as straightforward because it is easy to get the "cost" and the "benefits" of the "marginal whatever" wrong, and end up making a bad decision. For example, what is the marginal cost of eating that extra pie? No, it is not $4.
 
 > _What’s the benefit of one more piece of pie? It tastes good. What’s the cost of it? I’m already overweight, I should be trimming back on my calories._
-> 
+>
 > **_Howard Baetjer_**
 
 ![](https://ktbt10.files.wordpress.com/2019/05/food-photographer-jennifer-pallian-306931-unsplash.jpg?w=819)
@@ -35,7 +37,7 @@ In reality, all these things are not "just" what they look like on the surface. 
 In "How Will You Measure Your Life?", the authors talk about how we end up taking morally wrong decisions by misjudging the marginal cost because those incremental decisions "felt" so harmless.
 
 > The marginal cost of doing something “just this once” always seems to be negligible, but the full cost will typically be much higher. Yet unconsciously, we will naturally employ the marginal-cost doctrine in our personal lives. A voice in our head says, “Look, I know that as a general rule, most people shouldn’t do this. But in this particular extenuating circumstance, just this once, it’s okay.” And the voice in our head seems to be right; the price of doing something wrong “just this once” usually appears alluringly low. It suckers you in, and you don’t see where that path is ultimately headed or the full cost that the choice entails.
-> 
+>
 > How Will You Measure Your Life?
 
 What they are referring to as the "full cost" is actually the "full marginal cost" that we glazed over while making the decision. **That is how we end up breaking our habits too**! It's okay if I go have a few drinks today as well, right? It's okay if I didn't read for an hour today like I had planned to. What is it going to cost?
@@ -53,7 +55,7 @@ The rule of rational life, as shared by Jerry German, is that "As long as the ma
 Other than the full marginal cost of making a habit-breaking decision, there is another cost that you are incurring. **You are actually making it easier for yourself to break the habit again.**
 
 > It’s easier to hold to your principles 100 percent of the time than it is to hold to them 98 percent of the time. The boundary—your personal moral line—is powerful, because you don’t cross it; if you have justified doing it once, there’s nothing to stop you doing it again.
-> 
+>
 > **_How Will You Measure Your Life?_**
 
 Even though the authors meant it for maintaining integrity, I think it is true for building good habits too: **"100 percent of the time is easier than 98 percent of the time"**.

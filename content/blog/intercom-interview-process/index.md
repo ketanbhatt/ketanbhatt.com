@@ -2,9 +2,11 @@
 title: "Intercom's Interview Process and My Experience"
 date: "2020-01-01"
 coverImage: "effects-e1577902462794.jpg"
+redirect_from:
+  - /2020/01/01/intercom-interview-process-and-my-experience/
 ---
 
-**I interviewed at Intercom, Dublin, for a "Product Engineer" role in June - August, 2019.** I will be starting my Intercom journey on December 2nd, 2019 :D  
+**I interviewed at Intercom, Dublin, for a "Product Engineer" role in June - August, 2019.** I will be starting my Intercom journey on December 2nd, 2019 :D
 While preparing, I got a lot of help from [Glassdoor](https://www.glassdoor.co.in/Overview/Working-at-Intercom-EI_IE1035935.11,19.htm) and I thought of adding my interview experience to the internet too, for helping people in the future.
 
 Intercom's was one of the most thorough interview processes that I have experienced/heard about, and it's a good thing! It made me confident of the team I am going to be working with if all goes well. From what I could decipher from the rounds, Intercom is not only testing you technically, they also want to test you for your product skills and are judging if you will be a good addition to the team. They were also very responsive throughout the process, and the result of a round was shared within a week all the time (mostly within 3-4 days).
@@ -27,12 +29,12 @@ This is just a call to dig into your background, motivations and interests etc. 
 
 ### Technical Screener + Cultural Contribution
 
-Two-thirds of the call is "technical" and consists of basic Algorithmic and Data Structure based questions. My suggestion here will be to cover as many "[Easy, Top Interview](https://leetcode.com/problemset/all/?difficulty=Easy&listId=wpwgkgt)" questions as possible from [Leetcode](https://leetcode.com/).  
+Two-thirds of the call is "technical" and consists of basic Algorithmic and Data Structure based questions. My suggestion here will be to cover as many "[Easy, Top Interview](https://leetcode.com/problemset/all/?difficulty=Easy&listId=wpwgkgt)" questions as possible from [Leetcode](https://leetcode.com/).
 The remaining call is focussed on "culture contribution" which was similar to other culture contribution rounds (discussed later).
 
 ### Culture Contribution
 
-Intercom has multiple rounds where they want to assess "What contribution will you make to Intercom's culture".  
+Intercom has multiple rounds where they want to assess "What contribution will you make to Intercom's culture".
 I liked that they call this round "Culture Contribution" and not "Culture Fit" because doing the latter could lead to a lot of biased decisions as they explain in their [blog post](https://www.intercom.com/blog/how-we-hire-engineers-part-2-culture-contribution/). They also do a good job of explaining what you can expect in the interview and how do they evaluate candidates.
 
 My suggestion here is that do not try to "wing it" in this round. It gets difficult to extract helpful examples from your past to show, for example, how you respond to negative feedback, on the spot! You need to be prepared beforehand and go deeper into your past experience and come up with evidence/anecdotes which you think is going to be relevant for the interview.
@@ -58,7 +60,7 @@ If you clear all the previous rounds, Intercom invites you to their office in Du
 
 ### Pair Programming: Minicom
 
-This is a 1.5 hours long round in which you are given a small project (called Minicom) and you have to extend the codebase to add functionality. You are given 30 minutes to work on it by yourself, and then 30 minutes each to pair program with two Intercom developers.  
+This is a 1.5 hours long round in which you are given a small project (called Minicom) and you have to extend the codebase to add functionality. You are given 30 minutes to work on it by yourself, and then 30 minutes each to pair program with two Intercom developers.
 At the end, you are expected to do a little demo of the feature that you built and answer a few questions such as, "What other features would you add if you had more time", etc.
 
 The rounds are "Pair Programming" in the real sense. I am not that well versed with Javascript and there were a few frontend changes. The people who worked with me in the pair programming round helped me debug issues, and with Javascript syntax as well.
@@ -71,7 +73,7 @@ This is a typical technical design round in which you are expected to design the
 
 ### Problem Solving
 
-This is a typical Data Structures and Algorithmic round, and involves solving 1-2 problems and writing code on a whiteboard in 45 minutes.  
+This is a typical Data Structures and Algorithmic round, and involves solving 1-2 problems and writing code on a whiteboard in 45 minutes.
 The questions were still "Leetcode Easy" level, but they were more difficult than the ones asked in the technical screener at the beginning of the process.
 
 ### Product Chat

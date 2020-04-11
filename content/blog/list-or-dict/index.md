@@ -1,6 +1,8 @@
 ---
 title: "How do I structure my data? Lists? Dictionaries? List of Dictionaries?"
 date: "2020-01-25"
+redirect_from:
+  - /2020/01/26/structure-data-list-dictionary-hashmap-array/
 ---
 
 You have some data in your database. How should you structure this data when you send it to the frontend, let's say, or want to work with it in your code? Should you convert the records to a list of dictionaries/hashmaps? Or should you just send them as a list of list? How do you know you have done the right thing?
@@ -95,10 +97,10 @@ In this case, where you only need to display the emails one by one, just sending
 
 ```
 email_ids = [
-    "cplowman0@nps.gov", 
-    "vizakson1@hexun.com", 
-    "jgairdner2@intel.com", 
-    "ebatchelor3@jalbum.net", 
+    "cplowman0@nps.gov",
+    "vizakson1@hexun.com",
+    "jgairdner2@intel.com",
+    "ebatchelor3@jalbum.net",
     "edorset4@omniture.com"
 ]
 ```
@@ -120,10 +122,10 @@ But remember what I said about there being no incorrect way? So, just for fun, w
 
 ```
 email_ids = [
-    ["cplowman0@nps.gov"], 
-    ["vizakson1@hexun.com"], 
-    ["jgairdner2@intel.com"], 
-    ["ebatchelor3@jalbum.net"], 
+    ["cplowman0@nps.gov"],
+    ["vizakson1@hexun.com"],
+    ["jgairdner2@intel.com"],
+    ["ebatchelor3@jalbum.net"],
     ["edorset4@omniture.com"]
 ]
 ```
@@ -132,10 +134,10 @@ Or a list of dictionaries:
 
 ```
 email_ids = [
-    {"email": "cplowman0@nps.gov"}, 
-    {"email": "vizakson1@hexun.com"}, 
-    {"email": "jgairdner2@intel.com"}, 
-    {"email": "ebatchelor3@jalbum.net"}, 
+    {"email": "cplowman0@nps.gov"},
+    {"email": "vizakson1@hexun.com"},
+    {"email": "jgairdner2@intel.com"},
+    {"email": "ebatchelor3@jalbum.net"},
     {"email": "edorset4@omniture.com"}
 ]
 ```
@@ -180,7 +182,7 @@ Again, we could very easily represent this data in multiple other ways and still
 
 ```
 transactions = [
-    [1237907, 'cplowman0@nps.gov', '7/5/2019', 240.5], 
+    [1237907, 'cplowman0@nps.gov', '7/5/2019', 240.5],
     [1678984, 'vizakson1@hexun.com', '9/26/2019', 414.03]
 ]
 ```
@@ -195,15 +197,15 @@ We could also add column names to the previous structure and make it a list of l
 ```
 transactions = [
     [
-        ["id", 1237907], 
-        ["email", 'cplowman0@nps.gov'], 
-        ["date", '7/5/2019'], 
+        ["id", 1237907],
+        ["email", 'cplowman0@nps.gov'],
+        ["date", '7/5/2019'],
         ["amount", 240.5],
-    ], 
+    ],
     [
-        ["id", 1678984], 
-        ["email", 'vizakson1@hexun.com'], 
-        ["date", '9/26/2019'], 
+        ["id", 1678984],
+        ["email", 'vizakson1@hexun.com'],
+        ["date", '9/26/2019'],
         ["amount", 414.03]
     ]
 ]
@@ -213,7 +215,7 @@ This structure is easy to comprehend visually, but this still needs to be access
 
 ### Display all attributes for each transaction
 
-This means we won't need to access columns directly by their column name, and that opens up the option for us to skip dictionaries this time. Why?  
+This means we won't need to access columns directly by their column name, and that opens up the option for us to skip dictionaries this time. Why?
 Because one unique characteristics of a dictionary is that we can access values directly by using the "key"/"hash" for them. But since we aren't going to be needing it here, we can choose not to use them.
 
 Let's start again with the frontend this time. This is one way of writing the code for what we want:
@@ -234,21 +236,21 @@ From what it looks like, it might make sense to send data this time as a list of
 ```
 transactions = [
     [
-        ["Id", 1237907], 
-        ["Email", 'cplowman0@nps.gov'], 
-        ["Date", '7/5/2019'], 
+        ["Id", 1237907],
+        ["Email", 'cplowman0@nps.gov'],
+        ["Date", '7/5/2019'],
         ["Amount", 240.5],
-    ], 
+    ],
     [
-        ["Id", 1678984], 
-        ["Email", 'vizakson1@hexun.com'], 
-        ["Date", '9/26/2019'], 
+        ["Id", 1678984],
+        ["Email", 'vizakson1@hexun.com'],
+        ["Date", '9/26/2019'],
         ["Amount", 414.03]
     ]
 ]
 ```
 
-We could have structured this data as a list of dictionaries too, and that would be an equally good solution here, maybe even better. Why?  
+We could have structured this data as a list of dictionaries too, and that would be an equally good solution here, maybe even better. Why?
 Because the frontend code will still remain equally readable, and it gives you the capability to access a particular key directly in the future (like, maybe the `id` for creating a detail link for each transaction etc.).
 
 * * *
@@ -256,7 +258,7 @@ Because the frontend code will still remain equally readable, and it gives you t
 I hope the examples helped you create an intuitiveness around how to choose the right structure for your data and use case. If you still don't feel confident, do not worry, give yourself a few weeks of experience :)
 
 > _There is no wrong data structure. But there MIGHT be an option that is better than the rest for your current usecase._
-> 
+>
 > Ketan Bhatt (never heard it anywhere else, so why not!)
 
 Ciao!
@@ -278,12 +280,12 @@ my_list = [1, 2, 3]
 
 Tuples are immutable, which means that you can not change the content of a tuple once it is created.
 
-This has certain advantages on your backend side of code. You could use tuples for storing items which you want to protect from getting changed by the program (or a human) later by mistake.  
+This has certain advantages on your backend side of code. You could use tuples for storing items which you want to protect from getting changed by the program (or a human) later by mistake.
 I generally use tuples when I want to depict that this data shouldn't be changed: this collection of items isn't "appendable/extendable" or you can't modify the value of "amount" for a transaction simply by assigning it a new value.
 
 ```
 transactions = [
-    (1237907, 'cplowman0@nps.gov', '7/5/2019', 240.5, True), 
+    (1237907, 'cplowman0@nps.gov', '7/5/2019', 240.5, True),
     (1678984, 'vizakson1@hexun.com', '9/26/2019', 414.03, True)
 ]
 ```

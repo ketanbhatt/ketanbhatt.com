@@ -2,11 +2,13 @@
 title: "Build Systems with Speed and Confidence by Closing the Loop First!"
 date: "2020-02-24"
 coverImage: "huzaifa-sheikh-1ivc4wneyyw-unsplash.jpg"
+redirect_from:
+  - /2020/02/24/build-systems-with-speed-and-confidence-by-closing-the-loop-first/
 ---
 
 I re-learnt something recently: the importance of closing the loop on a system you are trying to build, as quickly as possible, and then adding the juicy bits later (Thank you Kesha for helping me with the concept 😊).
 
-A completely finished "loop" is when you can provide the required input to your system, and it produces the desired output (or side effects, if that's how you like it). The "Close the loop first" technique is about closing this loop as fast as possible by creating a barebones version of it first, providing all or some required inputs, and generating a partial form of the desired output.  
+A completely finished "loop" is when you can provide the required input to your system, and it produces the desired output (or side effects, if that's how you like it). The "Close the loop first" technique is about closing this loop as fast as possible by creating a barebones version of it first, providing all or some required inputs, and generating a partial form of the desired output.
 Once we have closed this barebones loop, we can then begin implementing behaviours from the inside out, so that with each new change our loop starts looking more like the actual system we want.
 
 Sure, this is nothing new, right? We have all heard of this advice in various forms: build a proof of concept as quickly as possible; validate the unknowns first; if you want to deliver a car, deploy a skateboard first, etc. This is similar, but I am talking today purely from a "programming" point of view. **In addition to helping you fail fast, "closing the loop" first also lets you build systems with more speed.**
@@ -35,7 +37,7 @@ We start with an open loop
 
 ### Read the CSV and add each row to another CSV, with a new column "operation"
 
-To be able to close the loop quickly, we will just add a static value `"created"` to the new `"operation"` column.  
+To be able to close the loop quickly, we will just add a static value `"created"` to the new `"operation"` column.
 Also add tests to check that each row in the input file is present in the output file, and that a new column exists.
 
 import csv
@@ -124,8 +126,8 @@ Other than allowing you to build you system quickly, piece by piece, there are o
 
 ## Caveats
 
-Of course, this isn't a standalone best practice that you can implement in isolation. You need to already have a clearer picture of what you are trying to build.  
-And then, of course, some people might like it better to implement end to end in one go.  
+Of course, this isn't a standalone best practice that you can implement in isolation. You need to already have a clearer picture of what you are trying to build.
+And then, of course, some people might like it better to implement end to end in one go.
 And then there are things that are better implemented that way.
 
 All this is, is a tool. Use it where you think it can be useful.

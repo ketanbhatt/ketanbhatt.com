@@ -1,6 +1,8 @@
 ---
 title: "How I stopped being awful at managing: Leadership lessons from a Dev"
 date: "2018-05-06"
+redirect_from:
+  - /2018/05/06/how-i-stopped-being-awful-at-managing-leadership-lessons-from-a-dev/
 ---
 
 At [Squad](https://www.squadplatform.com/), we have been following the concept of having small inter-disciplinary teams, which we call Solver Teams (the concept is beautifully [explained by Spotify](https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/), we took a lot of inspiration from them). As fate would have it, I got to lead a team responsible for building the Machine Learning platform for Squad, from scratch.
@@ -24,27 +26,27 @@ What I have learnt is that **you can get people to share ideas that they have by
 **Ask these questions, and then pause**. Give them time to think. More than that, **let silence encourage the other person to speak**. Chris Voss describes this as “[effective pause](http://blog.blackswanltd.com/the-edge/how-to-use-silence-to-your-advantage)” in his book “[Never Split the Difference](https://www.goodreads.com/book/show/26156469-never-split-the-difference)”. It is not in the same context, but I have seen it work because the premise remains the same. Effective pauses make people gather their thoughts and think. A typical conversation at the office goes like:
 
 > **John Doe (hypothetical teammate)**: So, there is this issue. What do you think should be done?
-> 
+>
 > **Ketan Bhatt**: Interesting… What do you think should be done?
-> 
+>
 > **JD**: …?
-> 
+>
 > **KB**: … :)
-> 
+>
 > **JD**: …
-> 
+>
 > **KB**: …
-> 
+>
 > **JD**: Well… I guess we could try doing X?
-> 
+>
 > **KB**: Makes sense, what do you think the situation would look like if we do X?
-> 
+>
 > **JD**: There might be some issues with this particular thing, but that can be handled if we do a little tweak to X.
-> 
+>
 > **KB**: Looks good, will the design hold when we also have to do this other thing we had in the backlog?
-> 
+>
 > **JD**: Hmm, let me think more and get back to you?
-> 
+>
 > **KB**: Sure!
 
 Everyone who faces a problem also knows at least one way to solve it. Sometimes that way is all that is needed, sometimes it might need some tweaking. Otherwise, you can always suggest something you think might work and then discuss the solution further.
