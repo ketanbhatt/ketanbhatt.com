@@ -78,6 +78,12 @@ module.exports = {
     },
     'gatsby-redirect-from',
     'gatsby-plugin-meta-redirect',
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `ketan-bhatt`
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
