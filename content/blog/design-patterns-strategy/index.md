@@ -1,14 +1,16 @@
 ---
 title: "Preventing Rubber Ducks from Flying: The Strategy Pattern"
 date: "2016-04-26"
+redirect_from:
+  - /2016/04/26/design-patterns-strategy/
 ---
 
 > _Master:_ So Grasshopper, should effort go into reuse **above** maintainability and extensibility?
-> 
+>
 > _Student:_ Master, I believe that there is truth in this.
-> 
+>
 > _Master:_ I can see that you still have much to learn.
-> 
+>
 > _\-- -- Head First Design Patterns_
 
 #### The Strategy Pattern:

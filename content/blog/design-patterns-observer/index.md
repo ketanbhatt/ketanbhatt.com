@@ -1,6 +1,8 @@
 ---
 title: "AI and News Flashes: The Observer Pattern"
 date: "2016-04-27"
+redirect_from:
+  - /2016/04/27/design-patterns-observer/
 ---
 
 ### The Observer Pattern:
