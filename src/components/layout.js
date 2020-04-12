@@ -1,6 +1,5 @@
 import React from "react"
-import { useStaticQuery, Link } from "gatsby"
-import Image from "gatsby-image"
+import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -9,51 +8,17 @@ import Footer from "../components/footer"
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
 
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-        childImageSharp {
-          fixed(width: 60, height: 60) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          author {
-            name
-          }
-        }
-      }
-    }
-  `)
-
-  const author = data.site.siteMetadata.author
-
   let header
 
   if (location.pathname === rootPath) {
     header = (
       <h1
         style={{
-          ...scale(1.42),
-          marginBottom: 0,
+          ...scale(1.5),
+          marginBottom: rhythm(1.5),
           marginTop: 0,
         }}
       >
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={author.name}
-          style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            minWidth: 50,
-            borderRadius: `100%`,
-          }}
-          imgStyle={{
-            borderRadius: `50%`,
-          }}
-        />
         <Link
           style={{
             boxShadow: `none`,
