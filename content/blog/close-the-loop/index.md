@@ -1,7 +1,7 @@
 ---
 title: "Build Systems with Speed and Confidence by Closing the Loop First!"
 date: "2020-02-24"
-coverImage: "huzaifa-sheikh-1ivc4wneyyw-unsplash.jpg"
+coverImage: ".images/cover.jpg"
 redirect_from:
   - /2020/02/24/build-systems-with-speed-and-confidence-by-closing-the-loop-first/
 ---
@@ -29,7 +29,7 @@ We know how we will roughly do it. Read the CSV file, and for each row:
 
 We can go about writing our code in this exact order, or we can "close the loop" first, and then add capabilities to our code.
 
-![](https://ktbt10.files.wordpress.com/2020/02/excalidraw-202029212455.png?w=1024)
+![Loop is Open](./images/open-loop.png)
 
 We start with an open loop
 
@@ -40,25 +40,28 @@ We start with an open loop
 To be able to close the loop quickly, we will just add a static value `"created"` to the new `"operation"` column.
 Also add tests to check that each row in the input file is present in the output file, and that a new column exists.
 
+```py
 import csv
 
-def close\_the\_loop():
-    input\_file = open('data.csv', 'r')
-    output\_file = open('output.csv', 'w')
+def close_the_loop():
+    input_file = open('data.csv', 'r')
+    output_file = open('output.csv', 'w')
 
-    input\_csv = csv.DictReader(input\_file)
-    headers = input\_csv.fieldnames + \['operation'\]
-    output\_csv = csv.DictWriter(output\_file, headers)
+    input_csv = csv.DictReader(input_file)
+    headers = input_csv.fieldnames + ['operation']
+    output_csv = csv.DictWriter(output_file, headers)
 
-    for row in input\_csv:
-        row\['operation'\] = 'created'
-        output\_csv.writerow(row)
+    for row in input_csv:
+        row['operation'] = 'created'
+        output_csv.writerow(row)
 
-    input\_file.close(), output\_file.close()
+    input_file.close(), output_file.close()
+
+```
 
 _\* I wanted to make the code more readable, for a blog, by having less indents. Otherwise a better way to read files in Python is by opening the file using `with`_.
 
-![](https://ktbt10.files.wordpress.com/2020/02/close_loop_1-1.png?w=991)
+![Step 1 - Close the loop](./images/step-1-close-loop.png)
 
 Aaaaaaand....the loop is closed!
 
@@ -68,19 +71,21 @@ Aaaaaaand....the loop is closed!
 
 Update your test to check the correct value of the `operation` column based on what you mocked it with.
 
+```py
 ...
 
-def update\_or\_create(row):
+def update_or_create(row):
     return 'created'
 
-def close\_the\_loop():
+def close_the_loop():
     ...
 
-    for row in input\_csv:
-        row\['operation'\] = update\_or\_create(row)
-        output\_csv.writerow(row)
+    for row in input_csv:
+        row['operation'] = update_or_create(row)
+        output_csv.writerow(row)
 
     ...
+```
 
 ### Actually implement the `update_or_create` method
 
@@ -90,22 +95,24 @@ Add a new unit test for `update_or_create`. By this point, you are almost done.
 
 Also update your tests to account for this change.
 
+```py
 ...
 
-def clean\_row(row):
-    row\['name'\] = row\['name'\].strip
+def clean_row(row):
+    row['name'] = row['name'].strip
 
-def close\_the\_loop():
+def close_the_loop():
     ...
 
-    for row in input\_csv:
-        clean\_row(row)
-        row\['operation'\] = update\_or\_create(row)
-        output\_csv.writerow(row)
+    for row in input_csv:
+        clean_row(row)
+        row['operation'] = update_or_create(row)
+        output_csv.writerow(row)
 
     ...
+```
 
-![](https://ktbt10.files.wordpress.com/2020/02/close_loop_2.png?w=1024)
+![Step 2 - Work is done](./images/step-2-done.png)
 
 Aaaaaaaaand...work is done!
 
@@ -113,9 +120,8 @@ Aaaaaaaaand...work is done!
 
 Even though it sounds like the same advice, I instantly visualised it when Kesha brought it up and said "let's close the loop first". I am a very visual person, and this created an image in my mind of a loop that needed closing. And when that loop gets closed, that's another **extremely** satisfying image. For me, this image is important because we regularly hear about a lot of best practices and design patterns, but what really matters is how many of them can we remember to apply to our situation when we actually sit down to implement stuff. Visualising a concept helps me remember it for a longer time.
 
-![](https://ktbt10.files.wordpress.com/2020/02/huzaifa-sheikh-1ivc4wneyyw-unsplash.jpg?w=1024)
-
-Photo by [HUZAIFA SHEIKH](https://unsplash.com/@huzy_sheikh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+![Photo of a Ferris wheel by Huzaifa Sheikh](./images/cover.jpg)
+*Photo by [HUZAIFA SHEIKH](https://unsplash.com/@huzy_sheikh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
 Other than allowing you to build you system quickly, piece by piece, there are other related benefits with this approach:
 
