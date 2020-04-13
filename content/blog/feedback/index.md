@@ -43,6 +43,5 @@ Related to this is the idea that if you want to buy something you already like o
 
 Similarly, I will think, "Why is this person making the same mistakes again? Maybe he doesn't consider it a mistake? Because then that means that I wasn't clear when I explained it to him.". And not, "This person is making the same mistakes again. He doesn't listen at all, let me put that negatively in his performance review."
 
-* * *
 
 I will be happy to know about what you do to take critical feedback well, and if you think I need to relearn a few things.
