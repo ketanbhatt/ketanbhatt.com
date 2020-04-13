@@ -1,7 +1,6 @@
 ---
 title: "Postgres: Recreating Indexes supporting Unique, Foreign Key and Primary Key Constraints"
 date: "2019-08-16"
-coverImage: "jason-leung-6rikib1qkz0-unsplash.jpg"
 description: "I have frequently found myself in situations when I had to reindex a few indexes (because the index got bloated a lot), and I always have to lookup the exact commands, after searching quite a bit, just to be sure that I am doing the right thing and not making a mistake."
 redirect_from:
   - /2019/08/16/recreating-indexes-supporting-unique-foreign-key-and-primary-key-constraints/
@@ -23,21 +22,27 @@ _Indexes that are not created for a constraint can be reindexed in the same way.
 
 We have the definition of the original index, we can just replace the name with a temporary name and use `CONCURRENTLY`:
 
+```sql
 CREATE INDEX CONCURRENTLY
-  new\_idx
-ON my\_sweet\_table USING
-  btree (my\_fk\_column);
+  new_idx
+ON my_sweet_table USING
+  btree (my_fk_column);
+```
 
 Now you can safely drop the original index. You can optionally use `CONCURRENTLY` here as well, read more about it in the docs: [Drop Index](https://www.postgresql.org/docs/current/sql-dropindex.html).
 
-DROP INDEX my\_lovely\_index;
+```sql
+DROP INDEX my_lovely_index;
+```
 
 You could also rename the new index to the original name (some frameworks, like Django, autogenerate index names using the table name, the app's name, and a hash of both of these plus the columns of the model. You might want to preserve that name).
 
+```sql
 ALTER INDEX
-  new\_idx
+  new_idx
 RENAME TO
-  my\_lovely\_index;
+  my_lovely_index;
+```
 
 Also, if the index you are recreating is a unique index, you can add the keyword `UNIQUE` to the `CREATE INDEX` command.
 
@@ -45,43 +50,46 @@ Also, if the index you are recreating is a unique index, you can add the keyword
 
 Recreate the Index, with the keyword `UNIQUE`.
 
+```sql
 CREATE UNIQUE INDEX CONCURRENTLY
-  new\_uniq\_idx
-ON my\_sweet\_table USING
-  btree (col\_a, col\_b);
+  new_uniq_idx
+ON my_sweet_table USING
+  btree (col_a, col_b);
+```
 
 Now, we want the constraint to use this new index. For that, we drop the original constraint, and add a new unique constraint that uses our new index. This is done in one atomic statement so that there is no time when there is no constraint on the table.
 We don't have to rename the index this time as Postgres automatically renames it to the name of the constraint.
 
+```sql
 ALTER TABLE
-  my\_sweet\_table
+  my_sweet_table
 DROP CONSTRAINT
-  uniq\_constraint\_777,
+  uniq_constraint_777,
 ADD CONSTRAINT
-  uniq\_constraint\_777 UNIQUE
+  uniq_constraint_777 UNIQUE
 USING INDEX
-  new\_uniq\_idx;
+  new_uniq_idx;
+```
 
 ## Recreating Indexes supporting Primary Key constraints
 
 This is achieved in the same manner as we did for recreating the index for a unique constraint. The only difference is that this time the constraint that we add is a `PRIMARY KEY` constraint, of course :D
 
+```sql
 CREATE UNIQUE INDEX CONCURRENTLY
-  new\_pkey\_idx
-ON my\_sweet\_table USING
+  new_pkey_idx
+ON my_sweet_table USING
   btree (id);
 
 ALTER TABLE
-  my\_sweet\_table
+  my_sweet_table
 DROP CONSTRAINT
-  my\_sweet\_table\_pkey,
+  my_sweet_table_pkey,
 ADD CONSTRAINT
-  my\_sweet\_table\_pkey PRIMARY KEY
+  my_sweet_table_pkey PRIMARY KEY
 USING INDEX
-  new\_pkey\_idx;
+  new_pkey_idx;
+```
 
-* * *
 
 That's it! Tadaaaa.
-
-_(Feature Image: Photo by [Jason Leung](https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_)
