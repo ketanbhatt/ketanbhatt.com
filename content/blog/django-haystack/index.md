@@ -42,9 +42,9 @@ So celery-haystack works by catching save/delete signals that django throws. Coo
 
 What about updates/creates that happen in bulk? No signals are emitted for those and that would mean those things will never be indexed. This is not ideal. You can not stop updating/creating in bulk because of this. So, we decided to run a cron every 10 minutes that reindexes everything that was created/updated in the last 10 minutes.
 
-How did we know what happened in the last 10 minutes? We have an `updated_at` field in the models we are indexing so that combined with haystack's `[update_index](http://django-haystack.readthedocs.org/en/v2.4.1/management_commands.html#update-index)` management command and its `age` parameter, we were able to achieve it. Another problem. When we do a `queryset.update()` in django, `auto_now` fields are not updated. Now what? Now a little hack :grin:
+How did we know what happened in the last 10 minutes? We have an `updated_at` field in the models we are indexing so that combined with haystack's [`update_index`](http://django-haystack.readthedocs.org/en/v2.4.1/management_commands.html#update-index) management command and its `age` parameter, we were able to achieve it. Another problem. When we do a `queryset.update()` in django, `auto_now` fields are not updated. Now what? Now a little hack :grin:
 
-https://gist.github.com/ketanbhatt/0475bb5ea6e1696f063e222baaec421f
+`gist:ketanbhatt/0475bb5ea6e1696f063e222baaec421f`
 
 We use this function wherever we are doing a `queryset.update()`. So this is solved.
 
@@ -55,9 +55,9 @@ We use this function wherever we are doing a `queryset.update()`. So this is sol
 
 So we coded a mixin:
 
-https://gist.github.com/ketanbhatt/8fcc274102a78c393996326454a05e21
+`gist:ketanbhatt/8fcc274102a78c393996326454a05e21`
 
-https://gist.github.com/ketanbhatt/0475bb5ea6e1696f063e222baaec421f#file-auto\_prepare\_text\_index\_mixin-py
+`gist:ketanbhatt/0475bb5ea6e1696f063e222baaec421f`
 
 Self explanatory. Add this mixin to your search indexes classes. Also implements `get_updated_field` because I didn't want to copy this code everywhere.
 
@@ -65,7 +65,7 @@ Self explanatory. Add this mixin to your search indexes classes. Also implements
 
 For that, we overrode the `ElasticsearchSearchEngine` class and came up with:
 
-https://gist.github.com/ketanbhatt/ddb3c0706e9950e4ce7162bf10be93d7
+`gist:ketanbhatt/ddb3c0706e9950e4ce7162bf10be93d7`
 
 Now plug this Backend for your `ENGINE` key in `HAYSTACK_CONNECTIONS` settings, and you are golden.
 
@@ -75,10 +75,11 @@ Yo, Done! Read on to know more.
 
 ## So do I copy all of this into my code?
 
-No, you can just use `[squadrun/django-haystack](https://github.com/squadrun/django-haystack)` and get all these things done for you (even fixed the filtering!). Go on, check the [Diff between the original and this fork](https://github.com/django-haystack/django-haystack/compare/master...squadrun:master) if you don't trust me.
+No, you can just use [`squadrun/django-haystack`](https://github.com/squadrun/django-haystack) and get all these things done for you (even fixed the filtering!). Go on, check the [Diff between the original and this fork](https://github.com/django-haystack/django-haystack/compare/master...squadrun:master) if you don't trust me.
 
-This is how my indexes look like:
+This is how my indexes look:
 
-https://gist.github.com/ketanbhatt/206ee53228a534ef0be625390fa16e4c
+`gist:ketanbhatt/206ee53228a534ef0be625390fa16e4c`
+
 
 See any mistakes in the fork, send a PR. Want to do similar things and solve problems, send an Email!

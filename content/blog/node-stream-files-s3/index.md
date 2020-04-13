@@ -13,11 +13,13 @@ Usually, the file upload from the client side (say, AngluarJS) is sent to the se
 2. Opens a File stream to the Amazon S3 bucket
 3. And writes the file directly to it.
 
-Code:
+### Code:
 
-https://gist.github.com/ketanbhatt/61ae289a9fb93ab040b4c063321797c3 I struggled with it for quite some time when I needed to implement this feature in one of my projects. I hope it will help the community in the future.
+`gist:ketanbhatt/61ae289a9fb93ab040b4c063321797c3`
 
-Resources:
+I struggled with it for quite some time when I needed to implement this feature in one of my projects. I hope it will help the community in the future.
+
+### Resources:
 
 1. [Multer](https://www.npmjs.com/package/multer)
 2. [S3FS](https://github.com/RiptideCloud/s3fs)

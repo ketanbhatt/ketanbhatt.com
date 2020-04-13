@@ -11,7 +11,7 @@ I suck at habits. I start out a dozen different things every week, and I drop th
 
 I thought I needed something to keep me motivated. Now there is somebody who I know does it best. Github. Yooo, it has that green graph on your profile that sits there proudly, a badge pronouncing your commitment to code.
 
-![github-commit-heatmap](https://ktbt10.files.wordpress.com/2018/09/github-commit-heatmap.png)
+![Github commit heatmap](./images/github-commit-heatmap.png)
 
 And the streak thing? I know that stuff has made me write code and push, sometimes meaningless commits (sometimes just adding a comment on any of my files directly on github from my phone because I was afk), just to not lose that streak. There is something about those green squares that gives me minor OCD. I decided I need that for my habits.
 
@@ -37,20 +37,21 @@ Well, we started this a month back, and then lost momentum (I got busy doing oth
 We would love to have somebody finish what we started. Here is the repository: [`ketanbhatt/habits`](https://github.com/ketanbhatt/habits)
 
 What has been done:
-
 - Adding habits using a form, persist in the database and displaying them
 - Displaying a heatmap
 - Making the "+" Button to commit a habit
 - Making a menu icon for the app
 
-What remains is:
+<br>
 
+What remains:
 - Updating heatmap when "+" is pressed
 - That redness thing for habits you must follow
 - UI touchup
 
-Libraries we used:
+<br>
 
+Libraries we used:
 - Electron, of course
 - [NeDB](https://github.com/louischatriot/nedb), an in-memory database
 - [Cal-heatmap](http://cal-heatmap.com/), how we drew the heatmap

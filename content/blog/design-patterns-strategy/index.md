@@ -11,7 +11,7 @@ redirect_from:
 >
 > _Master:_ I can see that you still have much to learn.
 >
-> _\-- -- Head First Design Patterns_
+> \- Head First Design Patterns
 
 #### The Strategy Pattern:
 
@@ -27,7 +27,7 @@ Define a family of algorithms, encapsulate each one, and make them interchangeab
 
 So you are a developer and you are making a _Duck Simulator_\* program. You are a nice person and so you use Inheritance. You have a `Duck` superclass that defines some attributes and methods. This class is inherited by other special `DuckType` classes. Like so:
 
-https://gist.github.com/ketanbhatt/39ced93e3634fdbb6a579716d4cca0e7
+`gist:ketanbhatt/39ced93e3634fdbb6a579716d4cca0e7`
 
 `quack()` and `swim()` are implemented in the superclass while `display()` is implemented in the child classes as each duck looks different.
 
@@ -47,7 +47,7 @@ We identify that `flying` and `quacking` are varying behaviours so we will abstr
 
 We will create `FlyBehavior` and `QuackBehavior` superclasses. Each behaviour will have a set of classes associated with it.
 
-https://gist.github.com/ketanbhatt/b92a32e49d0a5fb2929b340ead54d79f
+`gist:ketanbhatt/b92a32e49d0a5fb2929b340ead54d79f`
 
 You see the ingenuity of the approach? **Now you can easily add a new Duck type and give it any behaviour you want, without making any change to the superclass `Duck` or without adding any new methods to the child class.** This also prevents disasters like flying rubber ducks.
 

@@ -13,7 +13,7 @@ Define a one-to-many dependency between objects so that when one object changes 
 
 1. Strive for loosely coupled designs between objects that interact.
 
-# when will I need it?
+## when will I need it?
 
 So there is a smart "NewsGetter Machine". It fetches news from different sources on its own (these machines will one day start coding as well :cry:). This news is being consumed by two (for now) "Online Newspapers". You are given the task to implement a way for these newspapers to get the latest news as it comes and display it on their sites. The super-intelligent AI guys who built the NewsGetter also implemented a `news_flash()` method. This method gets called every time the NewsGetter gets some new news.
 
@@ -21,13 +21,13 @@ _Oh, also, there is a 100% chance of more newspapers starting to use the **NewsG
 
 You, being you, coded the implementation in under 5 minutes:
 
-https://gist.github.com/ketanbhatt/41142ce95eddf53e02db59e510550bd2
+`gist:ketanbhatt/41142ce95eddf53e02db59e510550bd2`
 
 Genius! Every time there is a news flash, `news_flash()` gets called, which gets the latest news and you update the newspapers. Simple and sweet. And extensible. No. No? No.
 
 What about the stuff we learnt about in our [Strategy Pattern post](http://ketanbhatt.com/2016/04/26/design-patterns-strategy/)? Looks like **we coded concrete implementations inside the `news_flash()` method. Now every time we get another newspaper that wants to use the `NewsGetter`, we will have to modify our code. That is bad. We should encapsulate what we know will vary.**
 
-# Observer Pattern to the rescue!
+## Observer Pattern to the rescue!
 
 Time to use some Design Principles!
 
@@ -42,11 +42,11 @@ While we are at it, we will also define a `NewsPaper` class that implements a `d
 
 Here is our definition of the superclasses and its usage:
 
-https://gist.github.com/ketanbhatt/bd44a513fadc7c5ad8852512b6536f1d
+`gist:ketanbhatt/bd44a513fadc7c5ad8852512b6536f1d`
 
 This was the Observer pattern. Notice how we were **Pushing** the news when we notified observers? This is sometimes not desirable. In that case we can go with a **Pulling** implementation. The call to `notify_observers` is made without any extra information. The observers, when they receive the notification, can call `get_news()` method of the `NewsGetterMachine` to fetch latest news if they want to.
 
-# how did we benefit?
+## how did we benefit?
 
 Now we can add any number of newspapers and just register them with the `NewsGetterMachine` and they will get the updated news! We can also register or remove observers at runtime.
 

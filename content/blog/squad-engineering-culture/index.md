@@ -5,9 +5,8 @@ redirect_from:
   - /2017/07/15/how-we-built-an-engineering-culture-of-doing-more-with-less/
 ---
 
-![](https://ktbt10.files.wordpress.com/2017/07/c204b-1acz5awgg43cfyan_khpixq.png)
-
-[Designed by Freepik](https://www.freepik.com/free-vector/two-developers-planning-their-work_1311469.htm)
+![Graphic displaying a standup](./images/cover.png)
+*[Designed by Freepik](https://www.freepik.com/free-vector/two-developers-planning-their-work_1311469.htm)*
 
 Sometimes when I tell my friends what we have built in a short span of time, I see there eyes going wide in disbelief. One candidate I was talking to about SquadRun thought we had 10–12 developers in the team, judging by what all we had built.
 
@@ -15,7 +14,7 @@ _But we are not a team of 10–12._ **At the moment, we are just 5, really commi
 
 And we get asked this often, how do we do it? Let me try and answer that. Two axes in the development plane have to be:
 
-## **Quality**
+## Quality
 
 _How and how well is the problem being solved._
 
@@ -27,7 +26,7 @@ We generally keep these things in mind while designing solutions for problems:
 
 Once the design is done and reviewed, we get down to implementing it. **This means less time taken for the actual code to be written since the process is carefully thought of, and less time spent on fixing bugs.**
 
-## **Speed**
+## Speed
 
 _Always be shipping._
 
