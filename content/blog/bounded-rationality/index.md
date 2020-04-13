@@ -13,9 +13,8 @@ We often get surprised by the decisions taken by those around us. _"But how coul
 
 As a simple example, think of a fishing ecosystem. The fishermen benefit directly from how many fishes they catch every day. Ideally, the fish population that is lost by fishing or other causes (pollution, ageing etc.) gets replenished by natural reproduction. But the fishermen start overfishing to maximise their benefits, bringing the fish population below a critical number and natural reproduction alone is no more sufficient to replenish the fish population. The fishermen end up destroying their own livelihood.
 
-![](https://ktbt10.files.wordpress.com/2019/01/iva-rajovic-760330-unsplash.jpg)
-
-Fishermen tend to overfish to maximise their benefits. Photo by [Iva Rajović](https://unsplash.com/photos/MhcWRAtSsro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/fishermen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+![Fishermen by a lake](./images/fishermen.jpg)
+*Fishermen tend to overfish to maximise their benefits. Photo by [Iva Rajović](https://unsplash.com/photos/MhcWRAtSsro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/fishermen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
 Why couldn't the fishermen foresee this? The more you fish, the lesser there will be left, isn't that intuitive? No. Because the fishermen don't know how much fish is there in the pond, or how many fishes will be caught by other fishermen the same day. They have a bounded view of the reality (the same example is also suitable for describing ["Tragedy of the Commons"](https://en.wikipedia.org/wiki/Tragedy_of_the_commons)).
 
@@ -43,11 +42,10 @@ Doesn't that also explain why we call for diversity in teams? Because diversity 
 >
 > Donella H. Meadows
 
-![](https://ktbt10.files.wordpress.com/2019/01/charles-postiaux-1185590-unsplash.jpg)
+![Fishes in a lake](./images/cover.jpg)
+*Nature often creates self-regulatory systems. Photo by [Charles Postiaux](https://unsplash.com/photos/3Fbk3q1tMaQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/fish?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
-Nature often creates self-regulatory systems. Photo by [Charles Postiaux](https://unsplash.com/photos/3Fbk3q1tMaQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/fish?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
-## In closing,
+## In closing
 
 The concept is simple, and we might also have an understanding of it on the subconscious level, but having a term for it in our vocabulary means we are more aware of its existence, and therefore much more enabled to account for it.
 
