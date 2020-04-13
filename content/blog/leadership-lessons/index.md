@@ -13,7 +13,7 @@ How did I become less awful? By learning from my own experience, but more so fro
 
 Here are some ideas I found useful:
 
-# Nurture an environment where all ideas are worth sharing
+## Nurture an environment where all ideas are worth sharing
 
 A team is a cocktail of all the different personalities that the members carry. Not everyone will be equally comfortable in sharing an idea they might have. Some people might not be confident about their ideas (which might not be a correct judgement on their part), some would avoid speaking unless directly spoken to, while some are not just used to speaking amongst that particular group of people yet (maybe it’s a new team). Despite all this, how do you get everyone to share ideas?
 
@@ -53,7 +53,7 @@ Everyone who faces a problem also knows at least one way to solve it. Sometimes 
 
 You do this enough number of times, people automatically start doing this on their own, refining their ideas, and then finally coming to you to share what they have got. And since now there are more people sharing their ideas, your solution bank just grew larger, and the quality of your team’s problem solving, as a unit, goes up. Woot woot!
 
-# Build an Event Loop
+## Build an Event Loop
 
 We have all been there. The project kicks off with meticulous plans, timelines, and metrics that we vow to keep track of. A few weeks into the quarter, the timelines and the metrics aren’t being tracked with the same punctuality, if at all. I fell victim to this as well.
 
@@ -67,11 +67,10 @@ Learning from mistakes and guidance from my lead, **here is a suggestion: build 
 
 A lot of us follow something of this sort already, I found that making it explicit just works better for me.
 
-![](https://ktbt10.files.wordpress.com/2018/05/096e7-1q4gh7ek8ror4nqmc1hgqrg.png)
+![My Event Loop](./images/event-loop.png)
+*My Event Loop*
 
-My Event Loop
-
-# Balance thy sprint well
+## Balance thy sprint well
 
 My learnings are perfectly explained by Alan Page, Quality Director at Unity, in [his Manager Readme](https://github.com/angryweasel/managerreadme#3-improvement-is-a-prioirity). Specifically:
 
@@ -81,9 +80,8 @@ My learnings are perfectly explained by Alan Page, Quality Director at Unity, in
 
 Vikas Gulati, CTO at Squad and my mentor, often points to the following diagram, from [this First Review post](http://firstround.com/review/track-and-facilitate-your-engineers-flow-states-in-this-simple-way/), for explaining roughly the same thing:
 
-![](https://ktbt10.files.wordpress.com/2018/05/1981a-1lwqzhunhxxiy0wkzjotwvq.jpeg)
-
-Skills vs Challenge
+![Skills vs Challenge - The "Flow" graph](./images/flow.jpeg)
+*Skills vs Challenge*
 
 It is common knowledge that any good developer won’t be too happy if they don’t see themselves growing. But an overlooked fact is that growing is a continuous process, and not a badge that you get by working hard for a month. **It is easy to burn out people by assigning ambitious tasks to them one after the another (with good intentions on your part)**, and it is often too late by the time one realises that some irreversible damage has been dealt. **Another important aspect is gratification**. Some tasks are challenging but provide gratification early, while for some it might come in much later.
 
@@ -92,7 +90,5 @@ Your sprint is like a dessert. Too much sugar? Thank you for the Diabetes. Too l
 **A sprint, much like a dessert, should be a good mix of challenging and comfortable work, with wins spread for good measure :)**
 
 These lessons might be just common sense to some (you have my respect people), but I felt that knowing these things explicitly just helped me channel the team’s strength in a better manner, and, thus, do justice to their talents.
-
-_If you’re a talented developer who believes she’ll be a good fit for Squad —_ **_[we’re hiring](https://www.squadplatform.com/careers/?utm_source=mediumcom&utm_medium=article&utm_campaign=leadership_lessons_from_dev)_****_!_**
 
 _(Originally [posted on my Medium account](https://hackernoon.com/how-i-stopped-being-awful-at-managing-leadership-lessons-from-a-dev-d1bfebcb3a21))_

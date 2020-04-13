@@ -5,13 +5,12 @@ redirect_from:
   - /2018/04/02/configure-postgres-statement_timeout-from-within-django/
 ---
 
-![](https://cdn-images-1.medium.com/max/800/0*N92zoay61K_DEtpN.)
-
-“A close-up of white dials on a music mixer” by [Alexey Ruban](https://unsplash.com/@kartochky?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)
+![A close-up of white dials on a music mixer](./images/cover.jpeg)
+*“A close-up of white dials on a music mixer” by [Alexey Ruban](https://unsplash.com/@kartochky?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)*
 
 In a bid to prepare ourselves for projected growth, we are at the moment trying to figure out what part of our system will break at what scale, and how. One step towards this was to also define strict timeouts for our database queries, and eliminate/fix bad queries in the process.
 
-# The problem
+## The problem
 
 Our requirements were:
 
@@ -29,9 +28,8 @@ We identified multiple sources of our queries. Each of these might need a differ
 
 We planned to incrementally reduce the timeouts because at every step/iteration, there will be queries which will not be able to run properly within the planned timeout. We will have to fix all those queries before we reduce the timeout. The incremental limits we defined for each iterations were:
 
-![](https://ktbt10.files.wordpress.com/2018/04/18a82-1cbzgr_6xvpwru0xfhqonew.png)
-
-Timeout planned for each iteration
+![Timeout planned for each iteration](./images/timeout.png)
+*Timeout planned for each iteration*
 
 This is a no-brainer **_if_** your requirements are simple. You can simply [create roles](https://www.postgresql.org/docs/9.6/static/sql-createrole.html) in the database and [set different timeouts for them](https://www.postgresql.org/docs/9.6/static/sql-alterrole.html).
 
@@ -45,7 +43,7 @@ Our backend is built using Django, and to accomplish this we would have to
 
 Since we were planning on having multiple iterations, and there would be a lot of back and forth between the timeout limits while we are experimenting, it would become a hassle to write migrations and apply them every time something had to be changed. _This solution was not for us._
 
-# The solution
+## The solution
 
 We started thinking of a better way to accomplish what we had in mind.
 
@@ -56,7 +54,7 @@ We knew the “ease of configuration” would _only_ come if we can set the time
 
 Aha! Can’t we just catch the connection as soon as it is created, and set the timeout to whatever we desire for the session? Yes we can :)
 
-https://gist.github.com/ketanbhatt/730b86ebece1aa91ebbf2b6182163bb8
+`gist:ketanbhatt/730b86ebece1aa91ebbf2b6182163bb8`
 
 We also went ahead and set the timeout separately for each [`connection.alias`](https://docs.djangoproject.com/en/2.0/topics/db/multi-db/#defining-your-databases). That gives us **even more flexibility**, we can now set multiple separate timeout values for the connections from the same server as well (for example: set a timeout of 5s for queries made for our Android app facing APIs, except for login API, for which we set the timeout to 1s. And then use `<queryset>.using('<alias>')` to use the timeout you want).
 
@@ -67,13 +65,11 @@ The benefit of this approach is:
 3. Since the logic is now in the application code, we can do more stuff with this, like setting a certain timeout only for some percentage of the connections.
 4. Further, we can set different timeouts for different queries made from the same server
 
-# Caveats
+## Caveats
 
 1. Since we are running an additional query every time a connection is made, it has some implications. Even though [Django’s documentation says](https://docs.djangoproject.com/en/2.0/ref/databases/#optimizing-postgresql-s-configuration) that the effect is minor, it is worth checking out if it’s okay for your case
 2. Since the timeout is set using Django’s signals, it means that wherever Django does not publish a signal, this will not work. One such case is when you are directly logging in to the Postgres shell (or by doing `python manage.py dbshell`).
 
 The changes mentioned here gives us more control over our queries and we can selectively restrict our systems in case there is a 🔥 that needs strict actions to be taken to keep the more important parts of the app alive (_not the best solution, but sometimes they don’t have to be_ 😃) .
-
-_If you’re a talented developer who believes she’ll be a good fit for Squad —_ _**[we’re hiring!](https://www.squadplatform.com/careers/?utm_source=mediumcom&utm_medium=article&utm_campaign=configure_postgres_statement)**_
 
 (Originally [posted on my Medium account](https://medium.com/squad-engineering/configure-postgres-statement-timeouts-from-within-django-6ce4cd33678a))

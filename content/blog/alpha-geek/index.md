@@ -5,7 +5,7 @@ redirect_from:
   - /2018/08/12/dont-be-the-alpha-geek-your-team-deserves-better/
 ---
 
-# Alpha Geek?
+## Alpha Geek?
 
 I recently came across the term “Alpha Geek” in “[The Manager’s Path](https://www.goodreads.com/book/show/33369254-the-manager-s-path)”.
 
@@ -23,7 +23,7 @@ Ok, wait. Am I one? **_Do I come out as one?_**
 
 I love design discussions, I love contesting solutions and have had some very livid arguments with my colleagues on subjective choices. Do I come out as rigid? Someone who takes offence if his mistakes are pointed out?
 
-# Revelation
+## Revelation
 
 After getting introduced to the concept, I am now actively thinking if I accept my mistakes or not. It is a fun exercise. It is not like I think I am an alpha geek, but I think I might be unconsciously exhibiting some of the bad characteristics of one. **And the problem here is, you will never know you are becoming one until it is too late.**
 
@@ -37,7 +37,7 @@ I do tend to defend my decisions around code and design and give excuses, where 
 
 Although I am not _that_ bad, trust me. If someone does prove objectively as to how this other way is better, I happily accept it. I tell the person he is right and the suggested solution is much better. Yes, let’s do this! But in the moments before getting proven wrong, do I behave rigidly like I am the all-knowing senior engineer who is often right?
 
-# Changing the way I go about discussions
+## Changing the way I go about discussions
 
 Rigid. This is not who I am, and I don’t want to be coming off like this unconsciously as well. So now whenever I get into a discussion, I am actively evaluating my stance:
 
