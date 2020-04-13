@@ -13,7 +13,7 @@ Once we have closed this barebones loop, we can then begin implementing behaviou
 
 Sure, this is nothing new, right? We have all heard of this advice in various forms: build a proof of concept as quickly as possible; validate the unknowns first; if you want to deliver a car, deploy a skateboard first, etc. This is similar, but I am talking today purely from a "programming" point of view. **In addition to helping you fail fast, "closing the loop" first also lets you build systems with more speed.**
 
-# How exactly does it help? 🤔
+## How exactly does it help? 🤔
 
 Let's look at what I am trying to say using a simple example.
 
@@ -33,9 +33,9 @@ We can go about writing our code in this exact order, or we can "close the loop"
 
 We start with an open loop
 
-## Step 1: Close the Loop!
+### Step 1: Close the Loop!
 
-### Read the CSV and add each row to another CSV, with a new column "operation"
+**Read the CSV and add each row to another CSV, with a new column "operation"**
 
 To be able to close the loop quickly, we will just add a static value `"created"` to the new `"operation"` column.
 Also add tests to check that each row in the input file is present in the output file, and that a new column exists.
@@ -65,9 +65,9 @@ _\* I wanted to make the code more readable, for a blog, by having less indents.
 
 Aaaaaaand....the loop is closed!
 
-## Step 2: Add juicy bits
+### Step 2: Add juicy bits
 
-### For each row, call a dummy method that will later implement the DB operation, but right now returns "updated/created".
+**For each row, call a dummy method that will later implement the DB operation, but right now returns "updated/created".**
 
 Update your test to check the correct value of the `operation` column based on what you mocked it with.
 
@@ -87,11 +87,11 @@ def close_the_loop():
     ...
 ```
 
-### Actually implement the `update_or_create` method
+**Actually implement the `update_or_create` method**
 
 Add a new unit test for `update_or_create`. By this point, you are almost done.
 
-### Add a method to do some data cleaning before writing to the output file.
+**Add a method to do some data cleaning before writing to the output file.**
 
 Also update your tests to account for this change.
 
@@ -116,7 +116,7 @@ def close_the_loop():
 
 Aaaaaaaaand...work is done!
 
-# How does this work?
+## How does this work?
 
 Even though it sounds like the same advice, I instantly visualised it when Kesha brought it up and said "let's close the loop first". I am a very visual person, and this created an image in my mind of a loop that needed closing. And when that loop gets closed, that's another **extremely** satisfying image. For me, this image is important because we regularly hear about a lot of best practices and design patterns, but what really matters is how many of them can we remember to apply to our situation when we actually sit down to implement stuff. Visualising a concept helps me remember it for a longer time.
 
@@ -130,7 +130,7 @@ Other than allowing you to build you system quickly, piece by piece, there are o
 3. If you plan correctly, you can prioritise and selectively add capabilities to your system (maybe do the optimisations after initial deployment?) as you build. This helps you deliver basic capabilities as fast as possible, and sometimes that's all what is needed (\*cough\* startups \*cough\*).
 4. And of course, all the benefits of failing fast or uncovering the unknowns first are still valid: If your assumptions prove out to be wrong, your time investment is minimal at this point, and you can still figure out a way to work around this new-found information.
 
-## Caveats
+### Caveats
 
 Of course, this isn't a standalone best practice that you can implement in isolation. You need to already have a clearer picture of what you are trying to build.
 And then, of course, some people might like it better to implement end to end in one go.
