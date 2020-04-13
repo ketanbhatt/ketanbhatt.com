@@ -9,7 +9,8 @@ As I just get off Whatsapp after talking to VG, I couldn't stop mentioning it to
 
 When I joined SquadRun back in 2015, I was no more different than I am right now. And VG couldn't be any more different than he is right now. And both of us couldn't be any more different than each other than two people can ever be. This might not make sense, but it doesn't have to. _**Feel it**_. Despite having these starkly different personality types, we clicked. He was the CTO of SquadRun, ever so serious. And I would pick him up (literally) and dance around with him (something that not a lot of people can boast of doing). But this is not about how well we clicked. This is about how Vikas goes on about his life solving hard problems every day, like a boss (please notice pun).
 
-\[caption id="attachment\_124" align="alignnone" width="610"\]![vg](https://ktbt10.files.wordpress.com/2017/07/vg.jpeg) (L-R) Vikas, I and Shubham (another guy I love)\[/caption\]
+![Vikas Gulati](./images/vg.jpeg)
+*(L-R) Vikas, I and Shubham (another guy I love)*
 
 Vikas is empathetic and in all his dealings with people, he will always be fair. I have had my fair share of sad moments in life. And when they happened, VG would simply ask me to take a break if I was unable to focus. Once I made a sudden plan for a trip (before you judge me, Coldplay was in the country and I got free passes), VG happened to take one day to tell me it was fine for me to go away for 3-4 days. He paid the amount by which the flight price increased from the previous day, even though he really didn't have to.
 
@@ -25,4 +26,4 @@ And now, after I have left SquadRun, leaving the team with a bandwidth crunch, V
 
 I will just stop here because I am feeling better now. You praise us a lot for a small bug we could fix quickly, or a design we could think in and out of. But you need to be praised properly too. **You have changed a lot of lives. Keep at it.**
 
-I know this reads like a fan-mail. Aha, good observation skills lovely reader. It is! I am a fan Vikas <3 and I know at least 10 more people who feel the same.
+I know this reads like a fan-mail. Aha, good observation skills lovely reader. It is! I am a fan Vikas ❤️ and I know at least 10 more people who feel the same.

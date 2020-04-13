@@ -12,7 +12,7 @@ For the lazy, here is a **tl;dr**:
 1. I missed the team, and the hustle.
 2. Platform team was facing acute bandwidth crunch.
 3. It is the team that makes or breaks a company. And I am responsible for whatever happens to Squadrun.
-4. **\\<ambition\\>**_Bring me a problem, I will solve it better than anyone else**\\**_**</ambition\\>**. Squad has only ever helped me move towards this, can't wait to learn more by doing.
+4. **<ambition\>**_Bring me a problem, I will solve it better than anyone else_**<ambition\\>**. Squad has only ever helped me move towards this, can't wait to learn more by doing.
 
 For others, you are too free, but here it goes:
 
