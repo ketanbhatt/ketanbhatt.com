@@ -1,7 +1,6 @@
 ---
 title: "Build Systems with Speed and Confidence by Closing the Loop First!"
 date: "2020-02-24"
-coverImage: ".images/cover.jpg"
 redirect_from:
   - /2020/02/24/build-systems-with-speed-and-confidence-by-closing-the-loop-first/
 ---

@@ -7,9 +7,8 @@ redirect_from:
 
 You have some data in your database. How should you structure this data when you send it to the frontend, let's say, or want to work with it in your code? Should you convert the records to a list of dictionaries/hashmaps? Or should you just send them as a list of list? How do you know you have done the right thing?
 
-![](https://ktbt10.files.wordpress.com/2020/01/melanie-dretvic-uq1pgps0910-unsplash.jpg?w=1024)
-
-Photo by [Melanie Dretvic](https://unsplash.com/@designwilde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/confused?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+![Photo of a confused looking Giraffe by Melanie Dretvic](./images/cover.jpg)
+*Photo by [Melanie Dretvic](https://unsplash.com/@designwilde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/confused?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
 Most of us make these choices almost daily without even giving this a second thought, but this is the exact question someone asked me after they couldn't find a satisfying explanation for their dilemma. Turns out, this will be a genuine confusion for you if you are new to programming or have been in the industry for a very long time but you come from a different background.
 
@@ -29,65 +28,13 @@ Let's look at a few examples to develop intuition for making these choices. Thes
 
 We will consider the following dataset for our examples and we will assume that we need to display this data on our website.
 
-**id**
-
-**email**
-
-**date**
-
-**amount**
-
-**is\_approved**
-
-1237907
-
-[cplowman0@nps.gov](mailto:cplowman0@nps.gov)
-
-7/5/2019
-
-240.5
-
-TRUE
-
-1678984
-
-[vizakson1@hexun.com](mailto:vizakson1@hexun.com)
-
-9/26/2019
-
-414.03
-
-TRUE
-
-2177890
-
-[jgairdner2@intel.com](mailto:jgairdner2@intel.com)
-
-8/14/2019
-
-938.55
-
-TRUE
-
-1536823
-
-[ebatchelor3@jalbum.net](mailto:ebatchelor3@jalbum.net)
-
-5/8/2019
-
-912.03
-
-FALSE
-
-2074131
-
-[edorset4@omniture.com](mailto:edorset4@omniture.com)
-
-5/29/2019
-
-178.92
-
-FALSE
+| id  | email  | date  | amount  | is_approved  |
+|---|---|---|---|---|
+| 1237907  | cplowman0@nps.gov  | 7/5/2019  | 240.5  | TRUE  |
+| 1678984  | vizakson1@hexun.com  | 9/26/2019  | 414.03  | TRUE  |
+| 2177890  | jgairdner2@intel.com  | 8/14/2019  | 938.55  | TRUE  |
+| 1536823  | ebatchelor3@jalbum.net  | 5/8/2019  | 912.03  | FALSE  |
+| 2074131  | edorset4@omniture.com  | 5/29/2019  | 178.92  | FALSE  |
 
 Transactions (Mock data generated using [Mockaroo](https://mockaroo.com/))
 
@@ -95,7 +42,7 @@ Transactions (Mock data generated using [Mockaroo](https://mockaroo.com/))
 
 In this case, where you only need to display the emails one by one, just sending them as a list will do the job. Right?
 
-```
+```js
 email_ids = [
     "cplowman0@nps.gov",
     "vizakson1@hexun.com",
@@ -109,18 +56,20 @@ This is the simplest way to loop over the emails and display them on your websit
 
 I am writing the syntax for Jinja Templates, but that's because it is a light weight way of communicating what I want. The solution isn't Jinja specific and will hold true for any kind of backend or frontend templating engines.
 
+```html
 <body>
   Email IDs of people who transacted are:
   <ul>
-    {% for email\_id in email\_ids %}
-      <li>{{ email\_id }}</li>
+    {% for email_id in email_ids %}
+      <li>{{ email_id }}</li>
     {% endfor %}
   </ul>
 </body>
+```
 
 But remember what I said about there being no incorrect way? So, just for fun, what are some other ways we could have done this? We could have passed this data to our frontend code as a list of list:
 
-```
+```js
 email_ids = [
     ["cplowman0@nps.gov"],
     ["vizakson1@hexun.com"],
@@ -132,7 +81,7 @@ email_ids = [
 
 Or a list of dictionaries:
 
-```
+```js
 email_ids = [
     {"email": "cplowman0@nps.gov"},
     {"email": "vizakson1@hexun.com"},
@@ -148,20 +97,22 @@ You could also come up with more ways and none of them will be incorrect. As lon
 
 Let's start from the frontend this time. Without thinking about how will we structure the data, what is the simplest way to display these specific columns? Maybe:
 
+```html
 <body>
   Some information about all the transactions
   {% for transaction in transactions %}
     <ul>
-      <li>Email: {{ transaction.email\_id }}</li>
+      <li>Email: {{ transaction.email_id }}</li>
       <li>Date: {{ transaction.date }}</li>
       <li>Amount: {{ transaction.amount }}</li>
     </ul>
   {% endfor %}
 </body>
+```
 
 This looks like a readable piece of code, right? Looking at it, it kind of becomes clear how we want to send data to the frontend. We are going to send it as a list of dictionaries. Where each dictionary represents a transaction record:
 
-```
+```js
 transactions = [
     {
         "id": 1237907,
@@ -180,7 +131,7 @@ transactions = [
 
 Again, we could very easily represent this data in multiple other ways and still be able to display the required information. For example, we could send this data as a list of list without column names:
 
-```
+```js
 transactions = [
     [1237907, 'cplowman0@nps.gov', '7/5/2019', 240.5],
     [1678984, 'vizakson1@hexun.com', '9/26/2019', 414.03]
@@ -194,7 +145,7 @@ You might already be starting to realise (if not, don't worry, you will soon) ho
 
 We could also add column names to the previous structure and make it a list of lists of lists (sounds complex!):
 
-```
+```js
 transactions = [
     [
         ["id", 1237907],
@@ -220,6 +171,7 @@ Because one unique characteristics of a dictionary is that we can access values 
 
 Let's start again with the frontend this time. This is one way of writing the code for what we want:
 
+```html
 <body>
   All information about all the transactions
   {% for transaction in transactions %}
@@ -230,10 +182,11 @@ Let's start again with the frontend this time. This is one way of writing the co
     </ul>
   {% endfor %}
 </body>
+```
 
 From what it looks like, it might make sense to send data this time as a list of lists of lists:
 
-```
+```js
 transactions = [
     [
         ["Id", 1237907],
@@ -265,17 +218,17 @@ Ciao!
 
 * * *
 
-### \[Extra\] \[Python\] What about Tuples?
+### [Extra] [Python] What about Tuples?
 
 When should I use Tuples instead of lists, you ask. As far as accessing data is concerned, tuples and lists behave in the same manner. Difference arises in how you can assign a new value or modify a value to an item in a tuple. You can't.
 
-```
+```py
 my_list = [1, 2, 3]
- my_list[1] = 42
- print(my_list)  # Output: [1, 42, 3]
+my_list[1] = 42
+print(my_list)  # Output: [1, 42, 3]
 
- my_tuple = (1, 2, 3)
- my_tuple[1] = 42  # TypeError: 'tuple' object does not support item assignment
+my_tuple = (1, 2, 3)
+my_tuple[1] = 42  # TypeError: 'tuple' object does not support item assignment
 ```
 
 Tuples are immutable, which means that you can not change the content of a tuple once it is created.
@@ -283,7 +236,7 @@ Tuples are immutable, which means that you can not change the content of a tuple
 This has certain advantages on your backend side of code. You could use tuples for storing items which you want to protect from getting changed by the program (or a human) later by mistake.
 I generally use tuples when I want to depict that this data shouldn't be changed: this collection of items isn't "appendable/extendable" or you can't modify the value of "amount" for a transaction simply by assigning it a new value.
 
-```
+```js
 transactions = [
     (1237907, 'cplowman0@nps.gov', '7/5/2019', 240.5, True),
     (1678984, 'vizakson1@hexun.com', '9/26/2019', 414.03, True)
