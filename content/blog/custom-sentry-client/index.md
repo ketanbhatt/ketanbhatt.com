@@ -7,11 +7,11 @@ redirect_from:
 
 We use [Sentry](https://sentry.io/welcome/) for our error reporting, and we love it. It is simple, gives [options for a lot of different use cases](https://docs.sentry.io/clients/python/advanced/#client-arguments), and can easily be integrated with Django, over which our backend is built. We recently fixed (or ignored :P) an issue we had for a long time. This article is about how we did it.
 
-# The Problem
+## The Problem
 
 Because of a [play between Django-Tastypie and Celery-Haystack](https://github.com/django-haystack/celery-haystack/blob/ca590126dd1836d3b1f03e9b9264d02161142e38/celery_haystack/tasks.py#L117), our celery workers ended up throwing a lot _(5 million in 2 years)_ of harmless `ValueError` exceptions. Due to other priorities and a large amount of effort required, we couldn’t get down to fixing the source of these exceptions. But soon we started reaching our rate-limits for errors on Sentry. We needed a way to make sentry ignore these particular errors.
 
-# The Fix
+## The Fix
 
 If it was a _logged_ error (like `logger.error`), we could simply [configure Django’s logging](https://docs.sentry.io/clients/python/integrations/django/#integration-with-logging) framework appropriately for sentry, but it was an unhandled exception so that would not work.
 
@@ -26,13 +26,13 @@ Looking into the code revealed that [`skip_error_for_logging`](https://github.co
 
 Here is our solution:
 
-https://gist.github.com/ketanbhatt/01f69978fd5a800924a8781e805bffb3
+`gist:ketanbhatt/01f69978fd5a800924a8781e805bffb3`
 
 This provides a lot of control over what exception we want to exclude. And can be extended to check for Exception `type` and `message` together, use regexes, or any other advanced handling we like.
 
 Result? Our hourly error rate instantly came down. Here is one of the heart-warming screenshots :)
 
-![](https://ktbt10.files.wordpress.com/2018/03/aa1b1-1wkq3qygm7duu1gpqkz3cua.jpeg)
+![Graph displaying reduced error count](./images/error-graph.jpeg)
 
 The green dots are when the deployment took place
 
