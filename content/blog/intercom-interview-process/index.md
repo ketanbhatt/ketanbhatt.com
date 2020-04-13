@@ -1,7 +1,6 @@
 ---
 title: "Intercom's Interview Process and My Experience"
 date: "2020-01-01"
-coverImage: "effects-e1577902462794.jpg"
 redirect_from:
   - /2020/01/01/intercom-interview-process-and-my-experience/
 ---
@@ -12,6 +11,8 @@ While preparing, I got a lot of help from [Glassdoor](https://www.glassdoor.co.i
 Intercom's was one of the most thorough interview processes that I have experienced/heard about, and it's a good thing! It made me confident of the team I am going to be working with if all goes well. From what I could decipher from the rounds, Intercom is not only testing you technically, they also want to test you for your product skills and are judging if you will be a good addition to the team. They were also very responsive throughout the process, and the result of a round was shared within a week all the time (mostly within 3-4 days).
 
 Intercom has also written a lot of resources to help you prepare for the interview. For starters, you should checkout this: [How to prepare for software engineering interview questions](https://www.intercom.com/blog/software-engineering-interview-questions/). I will share links to Intercom's blogs wherever relevant.
+
+![Cliffs of Moher](./images/cover.jpg)
 
 * * *
 
@@ -100,6 +101,6 @@ All in all, I had a great time interviewing with Intercom. I got to meet around 
 
 PS: I had completely forgotten, but it turns out I had tried applying for an Internship 4 years ago (some audacity!). Such a fun thing to find 😁 Destiny then?
 
-![](https://ktbt10.files.wordpress.com/2019/10/screenshot-2019-10-13-at-2.02.22-pm.png?w=855)
+![Screenshot of the time I applied for an internship at Intercom](./images/internship-application.png)
 
 Ciao!

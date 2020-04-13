@@ -7,7 +7,7 @@ redirect_from:
 
 You have some data in your database. How should you structure this data when you send it to the frontend, let's say, or want to work with it in your code? Should you convert the records to a list of dictionaries/hashmaps? Or should you just send them as a list of list? How do you know you have done the right thing?
 
-![Photo of a confused looking Giraffe by Melanie Dretvic](./images/cover.jpg)
+![A confused looking Giraffe](./images/cover.jpg)
 *Photo by [Melanie Dretvic](https://unsplash.com/@designwilde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/confused?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
 Most of us make these choices almost daily without even giving this a second thought, but this is the exact question someone asked me after they couldn't find a satisfying explanation for their dilemma. Turns out, this will be a genuine confusion for you if you are new to programming or have been in the industry for a very long time but you come from a different background.

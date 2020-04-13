@@ -119,7 +119,7 @@ Aaaaaaaaand...work is done!
 
 Even though it sounds like the same advice, I instantly visualised it when Kesha brought it up and said "let's close the loop first". I am a very visual person, and this created an image in my mind of a loop that needed closing. And when that loop gets closed, that's another **extremely** satisfying image. For me, this image is important because we regularly hear about a lot of best practices and design patterns, but what really matters is how many of them can we remember to apply to our situation when we actually sit down to implement stuff. Visualising a concept helps me remember it for a longer time.
 
-![Photo of a Ferris wheel by Huzaifa Sheikh](./images/cover.jpg)
+![A Ferris wheel](./images/cover.jpg)
 *Photo by [HUZAIFA SHEIKH](https://unsplash.com/@huzy_sheikh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
 Other than allowing you to build you system quickly, piece by piece, there are other related benefits with this approach:
