@@ -5813,6 +5813,13 @@ gatsby-plugin-google-analytics@^2.2.2:
     "@babel/runtime" "^7.8.7"
     minimatch "3.0.4"
 
+gatsby-plugin-intercom-spa@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-intercom-spa/-/gatsby-plugin-intercom-spa-0.2.0.tgz#b7c26036bc12ff6c9f0a46db341f7134678fa2d6"
+  integrity sha512-jgPVLhnvJ6U67QQC9ZfPIjr0BGGZkUaQcChpkNor14AN0kZdemP3p6lHIPBEIES3f83CJOsB9k+CUar4RRScGQ==
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-manifest@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.3.3.tgz#119b9e648428a0db8979d577d2fdb20a9f3c18b7"

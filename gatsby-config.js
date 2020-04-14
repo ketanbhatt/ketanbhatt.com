@@ -85,6 +85,12 @@ module.exports = {
         shortname: `ketan-bhatt`
       }
     },
+    {
+      resolve: 'gatsby-plugin-intercom-spa',
+      options: {
+        app_id: 'lxmgmh8d',
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
