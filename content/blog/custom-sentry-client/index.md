@@ -3,6 +3,7 @@ title: "Custom Sentry Client for more freedom: How to ignore any exception you w
 date: "2018-03-08"
 redirect_from:
   - /2018/03/08/custom-sentry-client-for-more-freedom-how-to-ignore-any-exception-you-want/
+category: programming
 ---
 
 We use [Sentry](https://sentry.io/welcome/) for our error reporting, and we love it. It is simple, gives [options for a lot of different use cases](https://docs.sentry.io/clients/python/advanced/#client-arguments), and can easily be integrated with Django, over which our backend is built. We recently fixed (or ignored :P) an issue we had for a long time. This article is about how we did it.

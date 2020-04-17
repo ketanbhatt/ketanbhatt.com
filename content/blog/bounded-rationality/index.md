@@ -3,6 +3,7 @@ title: "Why do we make irrational decisions?"
 date: "2019-01-15"
 redirect_from:
   - /2019/01/15/why-do-people-make-irrational-decisions/
+category: self-improvement
 ---
 
 We often get surprised by the decisions taken by those around us. _"But how could you not see that this whole Bitcoin thing was a bubble?"_, or _"how can you pass on that job opportunity?"_, or _"did you not know that there are more parts that need to be built here, and so this project will take more than the estimated time?"._ Turns out, people make decisions based on their **Bounded Rationality** (and so do you).

@@ -3,6 +3,7 @@ title: "Avoid breaking habits with help from Economics"
 date: "2019-05-29"
 redirect_from:
   - /2019/05/29/avoid-breaking-habits-with-help-from-economics/
+category: self-improvement
 ---
 
 Recently, while reading ["How Will You Measure Your Life?"](https://www.goodreads.com/book/show/13425570-how-will-you-measure-your-life?ac=1&from_search=true), I came across the concept of **Marginal Thinking** and I thought that it could be used as a mental model for motivating people who struggle with building new habits (like this guy I know, me).

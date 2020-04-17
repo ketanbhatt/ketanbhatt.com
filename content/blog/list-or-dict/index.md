@@ -3,6 +3,7 @@ title: "How do I structure my data? Lists? Dictionaries? List of Dictionaries?"
 date: "2020-01-25"
 redirect_from:
   - /2020/01/26/structure-data-list-dictionary-hashmap-array/
+category: programming
 ---
 
 You have some data in your database. How should you structure this data when you send it to the frontend, let's say, or want to work with it in your code? Should you convert the records to a list of dictionaries/hashmaps? Or should you just send them as a list of list? How do you know you have done the right thing?

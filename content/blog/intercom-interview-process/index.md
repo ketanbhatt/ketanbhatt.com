@@ -3,6 +3,7 @@ title: "Intercom's Interview Process and My Experience"
 date: "2020-01-01"
 redirect_from:
   - /2020/01/01/intercom-interview-process-and-my-experience/
+category: programming
 ---
 
 **I interviewed at Intercom, Dublin, for a "Product Engineer" role in June - August, 2019.** I will be starting my Intercom journey on December 2nd, 2019 :D

@@ -3,6 +3,7 @@ title: "ElasticSearch, Django and Haystack"
 date: "2016-04-19"
 redirect_from:
   - /2016/04/19/elasticsearch-django-with-haystack/
+category: programming
 ---
 
 **TLDR;** Use [`squadrun/django-haystack`](https://github.com/squadrun/django-haystack) and live your life happily. Also always index in batches. Also, read the whole of it.

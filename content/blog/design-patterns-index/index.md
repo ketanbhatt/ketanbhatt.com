@@ -3,6 +3,7 @@ title: "Design Patterns Quick Reference: Index"
 date: "2016-04-25"
 redirect_from:
   - /2016/04/25/design-patterns-quick-reference-index/
+category: programming
 ---
 
 So I need to learn about Design Patterns, because we are starting to do some really complex things with our codebase at [Squad](https://www.squadplatform.com/). We are going to add new features, algorithms, a machine learning layer (that needs figuring out too) but more important than that, we are going to add a better way to add new features and algorithms and layers. That is where design patterns jump in. I have time in my hand (have my college exams for a month which prevents me from directly working on our backend system) and thus I took this upon myself to learn more about Design Patterns and identify what patterns can we use for our needs.

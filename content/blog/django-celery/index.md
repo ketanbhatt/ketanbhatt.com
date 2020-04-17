@@ -3,6 +3,7 @@ title: "Two years with Celery in Production: Bug Fix Edition"
 date: "2017-12-17"
 redirect_from:
   - /2017/12/17/two-years-with-celery-in-production-bug-fix-edition/
+category: programming
 ---
 
 ![Ladybug in grass](./images/cover.png)

@@ -3,6 +3,7 @@ title: "Deep Work by Cal Newport"
 date: "2018-10-14"
 redirect_from:
   - /2018/10/14/deep-work-by-cal-newport/
+category: productivity
 ---
 
 I have always been interested in how to do more meaningful work, and get better and better at what I do. This quest sees me read content which is sometimes technical in nature and sometimes talks about how to be a better leader \[[1](http://ketanbhatt.com/2018/08/12/dont-be-the-alpha-geek-your-team-deserves-better/), [2](http://ketanbhatt.com/2018/05/06/how-i-stopped-being-awful-at-managing-leadership-lessons-from-a-dev/)\].

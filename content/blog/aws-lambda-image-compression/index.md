@@ -3,6 +3,7 @@ title: "Leveraging AWS Lambda for Image Compression at scale"
 date: "2017-09-17"
 redirect_from:
   - /2017/09/17/leveraging-aws-lambda-for-image-compression-at-scale/
+category: programming
 ---
 
 ![Cover Image](./images/cover.png)

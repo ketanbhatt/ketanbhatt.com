@@ -3,6 +3,7 @@ title: "Why Squad: Second Innings"
 date: "2017-08-09"
 redirect_from:
   - /2017/08/09/squad-and-ktbt-second-innings/
+category: personal
 ---
 
 No, I don't think the world at large is interested in what I am doing with my life. But I needed to write this because this question will get asked often internally and because [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).

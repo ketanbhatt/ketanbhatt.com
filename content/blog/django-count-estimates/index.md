@@ -3,6 +3,7 @@ title: "Estimated counts for faster Django Admin change_list"
 date: "2017-04-19"
 redirect_from:
   - /2017/04/19/estimated-counts-for-faster-django-admin-change_list/
+category: programming
 ---
 
 Short story of how we reduced the response time of some of our admin pages by **1000x**.

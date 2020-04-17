@@ -3,6 +3,7 @@ title: "Build Systems with Speed and Confidence by Closing the Loop First!"
 date: "2020-02-24"
 redirect_from:
   - /2020/02/24/build-systems-with-speed-and-confidence-by-closing-the-loop-first/
+category: programming
 ---
 
 I re-learnt something recently: the importance of closing the loop on a system you are trying to build, as quickly as possible, and then adding the juicy bits later (Thank you Kesha for helping me with the concept 😊).

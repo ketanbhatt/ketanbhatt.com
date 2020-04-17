@@ -3,6 +3,7 @@ title: "Building Habits, with a lot of help from Github"
 date: "2016-04-19"
 redirect_from:
   - /2016/04/19/building-habits-with-github-electron/
+category: programming
 ---
 
 I suck at habits. I start out a dozen different things every week, and I drop them as easily soon after. I needed to do something about it. I have used any.do (irritating), keep, inbox reminders, and many other lists. Nothing works for me.

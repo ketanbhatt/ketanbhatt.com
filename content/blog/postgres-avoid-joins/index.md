@@ -3,6 +3,7 @@ title: "Blazingly fast querying on huge tables by avoiding joins"
 date: "2017-05-14"
 redirect_from:
   - /2017/05/14/blazingly-fast-querying-on-huge-tables-by-avoiding-joins/
+category: programming
 ---
 
 ![Cover Image](./images/cover.png)

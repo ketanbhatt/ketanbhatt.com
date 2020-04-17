@@ -3,6 +3,7 @@ title: "Configure Postgres statement_timeout from within Django"
 date: "2018-04-02"
 redirect_from:
   - /2018/04/02/configure-postgres-statement_timeout-from-within-django/
+category: programming
 ---
 
 ![A close-up of white dials on a music mixer](./images/cover.jpeg)

@@ -4,6 +4,7 @@ date: "2019-08-16"
 description: "I have frequently found myself in situations when I had to reindex a few indexes (because the index got bloated a lot), and I always have to lookup the exact commands, after searching quite a bit, just to be sure that I am doing the right thing and not making a mistake."
 redirect_from:
   - /2019/08/16/recreating-indexes-supporting-unique-foreign-key-and-primary-key-constraints/
+category: programming
 ---
 
 I have frequently found myself in situations when I had to reindex a few indexes (because the index got bloated a lot), and I always have to lookup the exact commands, after searching quite a bit, just to be sure that I am doing the right thing and not making a mistake.

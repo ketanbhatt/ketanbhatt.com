@@ -3,6 +3,7 @@ title: "Stream Files to Amazon S3"
 date: "2015-04-20"
 redirect_from:
   - /2015/04/20/nodejs-streaming-files-amazons3/
+category: programming
 ---
 
 For any SaaS platform it is common to use a 3rd party hosting service for uploading files and serving them through a CDN. Amazon S3 is a common choice.

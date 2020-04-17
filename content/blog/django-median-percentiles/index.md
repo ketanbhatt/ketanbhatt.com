@@ -3,6 +3,7 @@ title: "Hack Django ORM to calculate Median and Percentiles (Or make annotations
 date: "2017-07-08"
 redirect_from:
   - /2017/07/08/hack-django-orm-to-calculate-median-and-percentiles-or-make-annotations-great-again/
+category: programming
 ---
 
 Hacks should be quick. And so should be the articles about them.

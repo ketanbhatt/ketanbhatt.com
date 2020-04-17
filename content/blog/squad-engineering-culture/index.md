@@ -3,6 +3,7 @@ title: "How we built an engineering culture of doing more with less"
 date: "2017-07-15"
 redirect_from:
   - /2017/07/15/how-we-built-an-engineering-culture-of-doing-more-with-less/
+category: management
 ---
 
 ![Graphic displaying a standup](./images/cover.png)

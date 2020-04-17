@@ -3,6 +3,7 @@ title: "Preventing Rubber Ducks from Flying: The Strategy Pattern"
 date: "2016-04-26"
 redirect_from:
   - /2016/04/26/design-patterns-strategy/
+category: programming
 ---
 
 > _Master:_ So Grasshopper, should effort go into reuse **above** maintainability and extensibility?

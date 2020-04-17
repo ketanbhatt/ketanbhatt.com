@@ -8,6 +8,8 @@ import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
+  const relatedPosts = data.allMarkdownRemark.edges
+
   const { title, siteUrl } = data.site.siteMetadata
   const { previous, next } = pageContext
 
@@ -16,6 +18,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     identifier: post.fields.slug,
     title: post.frontmatter.title,
   }
+
+
+  const relatedPostsHtml = relatedPosts.length === 0 ? (<p></p>) : (
+    <div>
+      <h4>More in {post.frontmatter.category}</h4>
+      <ul style={{paddingLeft: rhythm(1)}}>
+        {relatedPosts.map(({ node }) => {
+          return (<li style={{marginBottom: rhythm(1/5)}}><Link to={node.fields.slug}>{node.frontmatter.title}</Link></li>)
+        })}
+      </ul>
+      <br/>
+    </div>
+  )
 
   return (
     <Layout location={location} title={title}>
@@ -52,6 +67,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </article>
 
       <nav>
+        {relatedPostsHtml}
         <ul
           style={{
             display: `flex`,
@@ -87,7 +103,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String!, $category: String!) {
     site {
       siteMetadata {
         title
@@ -102,9 +118,26 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        category
       }
       fields {
         slug
+      }
+    }
+    allMarkdownRemark(
+        sort: {fields: frontmatter___date, order: DESC},
+        limit: 5,
+        filter: {frontmatter: {category: {eq: $category }}, fields: { slug: { ne: $slug } }}
+    ){
+      edges {
+        node {
+          frontmatter {
+            title
+          }
+          fields {
+            slug
+          }
+        }
       }
     }
   }
