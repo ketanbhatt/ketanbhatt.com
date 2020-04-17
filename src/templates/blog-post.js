@@ -55,26 +55,28 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <ul
           style={{
             display: `flex`,
-            flexWrap: `wrap`,
+            flexDirection: `row`,
             justifyContent: `space-between`,
             listStyle: `none`,
             padding: 0,
           }}
         >
-          <li>
+          <li>{previous && (<p>←</p>)}</li>
+          <li style={{width: rhythm(10)}}>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+                {previous.frontmatter.title}
               </Link>
             )}
           </li>
-          <li>
+          <li style={{width: rhythm(10), textAlign: `right`}}>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                {next.frontmatter.title}
               </Link>
             )}
           </li>
+          <li>{next && (<p>→</p>)}</li>
         </ul>
       </nav>
       <Disqus config={disqusConfig} />
