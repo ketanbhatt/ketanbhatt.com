@@ -29,6 +29,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         })}
       </ul>
       <br/>
+      <hr/>
     </div>
   )
 
