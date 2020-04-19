@@ -57,6 +57,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             }}
           >
             {post.frontmatter.date}
+            {' '}&bull;{' '}
+            <span className={`${post.frontmatter.category} category`}>{post.frontmatter.category}</span>
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
