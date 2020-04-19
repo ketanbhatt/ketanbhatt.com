@@ -27,6 +27,8 @@ const BlogIndex = ({ data, location }) => {
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
+              {' '}&bull;{' '}
+              <small className={`${node.frontmatter.category} category`}>{node.frontmatter.category}</small>
             </header>
             <section>
               <p
@@ -62,6 +64,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            category
           }
         }
       }
