@@ -99,7 +99,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <li>{next && (<p>→</p>)}</li>
         </ul>
       </nav>
-      <Disqus config={disqusConfig} />
+      {(process.env.NODE_ENV !== `development`) && (<Disqus config={disqusConfig} />)}
     </Layout>
   )
 }
@@ -129,9 +129,9 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
+        filter: {frontmatter: {draft: {ne: true}, category: {eq: $category}}, fields: {slug: {ne: $slug}}},
         sort: {fields: frontmatter___date, order: DESC},
-        limit: 5,
-        filter: {frontmatter: {category: {eq: $category }}, fields: { slug: { ne: $slug } }}
+        limit: 5
     ){
       edges {
         node {

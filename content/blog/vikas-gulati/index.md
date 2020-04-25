@@ -4,6 +4,7 @@ date: "2017-07-27"
 redirect_from:
   - /2017/07/27/vikas-gulati-the-platform-behind-squad/
 category: personal
+draft: false
 ---
 
 As I just get off Whatsapp after talking to VG, I couldn't stop mentioning it to a friend that this guy is Gold. Platinum. Titanium (now, I am not that good with metals, all I mean is, he is the best). Before I lose this intense passion, I thought I will just document it. **Let this be one of the first testimonials on him that the internet has because when the world starts knowing Vikas, they should know how far his awesomeness dates back to.**

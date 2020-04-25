@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 
 const NotFoundPage = ({ data, location }) => {
@@ -43,6 +43,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
+        filter: {frontmatter: {draft: {ne: true}}},
         sort: {fields: frontmatter___date, order: DESC},
         limit: 5,
     ){
