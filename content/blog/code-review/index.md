@@ -1,40 +1,79 @@
 ---
-title: "Coding review suggestion"
+title: "Can your Code Review system be upgraded?"
 date: "2020-04-25"
 category: programming
 draft: true
 ---
 
-Code Reviews around the world majorly follow the same process, in various flavours. You work on a task, and once you are done, toss it out to the team/company for review(s). For example, this process is followed in Amazon, Intercom, Freshworks, Gitlab, Grab.
-But to some people working in smaller teams, this might come as utter surprise. I know, because that's what my reaction was. Even when a previous teammate reported the process followed in his new company, we couldn't help but wonder how such a system will even work!
-But now I am on the other side, and I have seen it working. This article is an attempt to help people like me make this transition.
-👋
-This is what your process looks like at the moment, roughly:
-When your team decides to take up a piece of work, it is assigned to two people (maybe more). These two people are deemed "Primary" and "Secondary" owners for the task and are supposed to collaborate closely on the task. The "Primary" owner is supposed to come up with the solution to the problem initially, it is discussed among the two owners . Once finalised, the Primary owner gets to work, and produces a Pull Request for the Secondary owner to review. Depending on the task at hand, sometimes other people's help can be sought as well.
-This process of pre-deciding the reviewer for a piece of work is very common in small teams (less than 4 people or so). In hindsight, it makes sense. This is the natural way a company grows. It starts with just one developer doing everything, there is no review process in place. A second person joins the team, and it is pre-decided that you will be reviewing each other's work (what's the alternative anyway?). As more people join the team, the process sticks around. First, as a necessity to support new people more efficiently, and then because of inertia.
-What is the world doing?
-Generally, this is the process that a lot of companies follow:
-When a team decides to take up a piece of work, it gets assigned to a single person. This person comes up with a solution and discusses it with the team. Once the solution is finalised, this person gets to work and produces a Pull Request. This Pull Request can now be reviewed by anyone in the team. Depending on the task at hand, the solution and the pull request can be assigned to specific people who might be closer to the problem or experts in the particular domain.
-The solution can be shared with the team as a "Design Doc", and the Pull Request might be tossed into a channel to be voluntarily picked or randomly assigned by a bot. The specifics don't matter for our discussion today. We are after the overall idea of this approach.
-What benefits does this approach have?
-Results in work getting pushed to production faster as you no longer have to depend on one specific person to approve it. Anyone can jump in and review your work.
-Since there is one clear owner, there is no ambiguity regarding ownership of the work.
-Increased Bus Factor for the team since more and more people get to review different parts of the system, resulting in a more even knowledge distribution.
-Pushes you to have a more mature deployment process that allows people to push their code to production safely.
-If this is true, why do some teams never transition to this? Sometimes no one in the team has experienced this approach first-hand, or if someone has, they find it difficult to persuade the team to move to this "radically" different approach. By providing a go-to person to unblock you anytime you are stuck, pre-deciding the reviewer also gives an illusion of speed. It is also easier to onboard new people and support them in getting their work pushed to production if you don't have a more mature deployment process that does continuous integration and deployment.
-One other reason, and this is me speculating, could be that everyone just assumes that this is the only approach that people follow. All the blogs and articles I came across either talked about how to "do better code reviews" or how their system randomly assigns reviewers to a Pull Request, but doesn't talk about they why behind following this approach at all.
-Comments
-There are some implementation details to figure out, if you do choose to try this way. What I have described here is just the overall idea, there are still other specific cases that I haven't talked about:
-Two developers might be pair-programming on a piece of task. In this case they might not need anyone to review their code at all.
-Sometimes, in a volunteer based review system, some Pull Requests might remain unreviewed for a long time. In such cases, you can randomly assign it to someone you think is relevant and can take a look.
-You might be working on something really complex. In such cases, you can still toss the Pull Request to the team, but assign it to people whose review you think will be more valuable for the task. It is also completely fine to have it pre-decided who is going to review the Pull Requests in these cases.
-You can support new teammates by starting them off with easier tasks, and encourage them to ask for help when they get stuck, or get someone to give them an overview of your system so they can reason better. (Intercom starts you off with a "buddy" in the team, which becomes an easy person for you to approach when you have doubts).
-Evolution
-My aim with this article was just to make you feel strongly enough about making the transition. I can't tell you how to do it because I haven't done it first-hand. But here is just some common sense advice that I wanted to share:
-You can't move to this process overnight. Start small: try it out for tasks that are not too complex. See how it goes.
-You will have to build a culture where people understand that reviewing code is as important as writing it.
-Some companies follow a more formal process (you should do at least 1 review daily, or randomly assign reviews to people etc.), but this is not the only way forward. In my humble opinion, I think that the culture should be driving this process in smaller teams. You can nudge people to review Pull Requests, but I would avoid mandating it to begin with.
-I will be more than happy to discuss specific situations and try to brainstorm solutions together. In time, if I find that I have learnt something about it that I can share with people en masse, I will. Until then, Iterate.
+For a long time, I thought there was only one way how teams ran their code review processes (Not talking about how to write code review comments etc: [link][1]). This was based on my rather limited experience of working in a small company. Even when a friend mentioned how it works in his new larger company, I couldn't comprehend how this system could work, and dismissed it without giving it much thought.
 
-Pre-deciding the reviewer is good enough for teams with less than 4 engineers. But when the same practice sticks around as the team grows and doesn't evolve into it's next natural form, you are leaving money on the table.
-Ciao.
+I recently changed jobs and moved to a largiesh company myself. This move has helped me experience alternate ways of doing the same things. One such is code reviews. Now that I have experienced this "other" process, I start to feel how it would work and how it could be useful for teams of 5 people or more. My one regret here is not getting to try this approach out in my previous team, and getting to see how it fares. Maybe I could have unlocked a whole level of effectiveness, knowledge sharing and efficiency for my team? Now we will never know 😬.
+
+My intention in this article is to introduce people like me to this other system of running code reviews. I know I could have benefitted from something like this in the past. I do not know if there are more common ways of referring to these systems, so I am going to make up some headings. Please 🐻 with me.
+
+
+## I. Explicit Assignment 🤝
+
+![Explicitly assign your Pull Request](./images/explicit-assignment.png)
+
+Whenever a new piece of work is taken up, it is assigned to at least two people. One of the assignee is considered to be the "Primary" owner for the task, and is going to be the person in charge of getting the work done. The other person is the "Secondary" owner and is mostly the explicit, pre-decided, owner for design and code reviews for this piece of work.
+
+This is the process my older team followed. I asked 3-4 of my developer friends working in smaller companies and they mentioned that their teams follow a similar process as well.
+
+### What works well
+This process worked well enough for us. I think it had the following benefits
+
+1. You have a go-to person to clarify your doubts and between the two of you, you can arrive at a final decision without waiting for more feedback (unless of course you feel that you should wait for it). Like in distributed systems, you only require 2 people to agree and you have a consensus. This is faster than needing more agreements to arrive at a consensus. Although, this is only valid for those 10% controversial tasks. Most are straightforward.
+2. Since the reviewer has explicit ownership, they can plan and pre-allocate time for it. This helps in getting timely reviews done without creating ad-hoc distraction for the reviewer. In theory at least.
+
+### What could be better
+I also found things that I wished could be better:
+
+1. If the reviewer is unavailable because of some reason, either the piece of work is blocked/delayed, or someone else needed to take up this review. This, in turn, delayed/blocked the piece of work they were originally supposed to spend time on.
+2. Over time, different people had different pockets of expertise in the codebase (remember, I am not talking about the whole company, I am talking about a team that owns a part of that system). This means low bus factor.
+3. Many a times, we could have made better choices, if a third person was consulted before getting to work. Ideally, this third person should be the original reviewer, but you can't always objectively quantify who has better know-how about a particular part of the system and/or the kind of problem that is being solved. Sometimes you can have multiple such people (which is a good thing!).
+4. And probably one of the worst problem was caused by this shared form of responsibility (Primary and Secondary owners). It is but human nature to become lax if you know there is someone else that should point out things if you missed it (like how sometimes people complaining about devs churning out lower than expected quality of code just because they know there is a QA team that will thoroughly test things before it hits production). On more than one occasion we struggled to figure out where exactly were things missed, and how could we have avoided them. Is it something the Primary owner could have taken care of? Or was it something the Secondary owner should have pointed to while doing reviews? We finally landed on some version of: Everyone could have been more careful 😅 (To be clear, the aim was not to assign blame, but to gather actionable feedback that can be used to grow together as a team).
+
+
+## II. Volunteering 🙋🏼‍♀️
+
+![Toss your Pull Request in the Channel](./images/toss-in-the-channel.png)
+
+Whenever a new piece of work is taken up, it is (mostly) assigned to a single person. This person is the only owner for this task. This person is responsible for soliciting feedback on his solution and implementation, and then, finally, getting it done. This person would usually share a document describing his solution with the team, and the team can collaborate and give feedback on it. Similarly, the person throws their Pull Request in a channel where anyone can take it up.
+
+This is the process that is followed by Intercom, my current company. This is also the process that is followed at other large companies like Amazon, Freshworks, [Gitlab][2] and Grab.
+
+Sometimes, you do fallback to explicit/implicit assignment, for example when two people are pairing on a particular task, they don't necessarily need someone else to code review. Or if you are working on a critical task and you think there is someone who is extremely relevant and should take a look, you can ask them for a review too.
+
+### What problems does this solve
+
+1. Results in work getting pushed to production faster as you no longer have to depend on one specific person to approve it. Anyone can jump in and review your work.
+2. Since there is one clear owner, there is no ambiguity regarding ownership of the work.
+3. Increased Bus Factor for the team since more and more people get to review different parts of the system, resulting in a more even knowledge distribution.
+4. Pushes you to have a more mature deployment process that allows people to push their code to production safely.
+
+
+### What problems can this have?
+
+1. Needs more work to begin with to set the right culture. You need to take care of that people are putting in some time for reviews so that timely reviews happen. And also that someone (maybe a new person), isn't feeling confident enough to take up a review.
+
+    ![Sometimes you will have to ask people explicitly](./images/code-review-please.png)
+
+2. Consensus could be hard to achieve, but if it is something controversial, maybe more heads are better than one?
+
+
+## Parting Words
+
+You can't know you like it, until you have experienced it. Don't be dismissive and make the same mistake as I did. Trying is free (well, in this case at least). Maybe the change will end up improving your team's experience and effectiveness by a noticeable amount? Who knows? (hint: you can get to).
+
+One other reason, and this is me speculating, could be that everyone just assumes that this is the only approach that people follow. All the blogs and articles I came across either talked about how to "do better code reviews" or how their system randomly assigns reviewers to a Pull Request, but doesn't talk about they why behind following this approach at all.
+
+If you find this worthy of giving it a shot, know that it isn't going to be an easy change for you and your team. Start small, try it out with only a few tasks to begin with. But don't judge too early, give it some time. Best case, you strike gold. Most likely non-best case, you get to see what all the fuss is about, and get more confident about your processes.
+
+If you do give it a try, I will be thrilled to learn from your experience. Please reach out.
+
+👋
+
+
+[1]: https://mtlynch.io/human-code-reviews-1/
+[2]: https://docs.gitlab.com/ee/development/code_review.html#reviewer-roulette
