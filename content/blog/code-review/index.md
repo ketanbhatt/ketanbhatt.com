@@ -1,6 +1,6 @@
 ---
 title: "Can your Code Review process be upgraded?"
-date: "2020-04-25"
+date: "2020-04-28"
 category: programming
 draft: true
 ---
@@ -20,7 +20,7 @@ I do not know if there are more common words for referring to these systems, so 
 
 ![Explicitly assign your Pull Request](./images/explicit-assignment.png)
 
-Whenever a new piece of work is taken up, it is assigned to at least two people. One of the assignee is considered to be the "Primary" owner for the task, and is going to be the person in charge of getting the work done. The other person is the "Secondary" owner and is mostly the explicit, pre-decided, owner for design and code reviews for this piece of work.
+Whenever a new piece of work is taken up, it is assigned to at least two people. One of the assignees is considered to be the "Primary" owner for the task and is going to be the person in charge of getting the work done. The other person is the "Secondary" owner and is mostly the explicit, pre-decided, owner for design and code reviews for this piece of work.
 
 This is the process my older team followed. I asked a few of my developer-friends working in smaller companies and they mentioned that their teams follow a similar process as well.
 
@@ -34,23 +34,23 @@ This is the process my older team followed. I asked a few of my developer-friend
 ### What I wish could be better
 1. If the Secondary Owner is unavailable, work is either blocked or delayed, or some angel 👼 needs to take up the review. This, in turn, delays/blocks the piece of work this angel was originally supposed to spend time on.
 2. Most of the times, Primary owners end up picking other tasks while they are blocked on their review. This goes against the popular time-tested advice to limit "Work in Progress" and ensuring fast flow (_["The Phoenix Project"][3] talks about it in detail. They, in turn, have picked up on the advice from ["The Goal"][4]_).
-3. Many a times, we could have made better choices if a third person was consulted. Ideally, this third person should be the original reviewer, but you can't always objectively quantify who has better know-how about a particular part of the system and/or the kind of problem that is being solved.
-4. In a more specific example of the adage, _"When everyone is responsible, no one is responsible"_, having Primary and Secondary owners often lead to a [Diffusion of responsibility][5]. And when mistakes happen, it is difficult to identify the root cause and derive actionable learnings from the experience. (_Is it something the Primary owner should have handled, or should the Secondary owner have been more careful while reviewing?_) We often had to settle on some version of: Everyone could have been more careful 😅(_To be clear, the goal is not to assign blame, but to gather concrete actions that can be used to grow together as a team_).
+3. Many a time, we could have made better choices if a third person was consulted. Ideally, this third person should be the original reviewer, but you can't always objectively quantify who has better know-how about a particular part of the system and/or the kind of problem that is being solved.
+4. In a more specific example of the adage, _"When everyone is responsible, no one is responsible"_, having Primary and Secondary owners often lead to a [Diffusion of responsibility][5]. And when mistakes happen, it is difficult to identify the root cause and derive actionable learnings from the experience. (_Is it something the Primary owner should have handled, or should the Secondary owner have been more careful while reviewing?_) We often had to settle on some version of "Everyone could have been more careful" 😅(_To be clear, the goal is not to assign blame, but to gather concrete actions that can be used to grow together as a team_).
 
 
 ## II. Volunteering 🙋🏼‍♀️
 
 ![Toss your Pull Request in the Channel](./images/toss-in-the-channel.png)
 
-Whenever a new piece of work is taken up, it is (mostly) assigned to a single person. This person is the only owner for this task. This person is responsible for soliciting feedback on their solution and implementation, and then, finally, getting it shipped. This person would usually share a document describing the solution to the team, and the team can collaborate and give feedback on it. Eventually, the person tosses their Pull Request in a channel where anyone can then take it up.
+Whenever a new piece of work is taken up, it is (mostly) assigned to a single person. This person is the only owner of this task. This person is responsible for soliciting feedback on their solution and implementation, and then, finally, getting it shipped. This person would usually share a document describing the solution to the team, and the team can collaborate and give feedback on it. Eventually, the person tosses their Pull Request in a channel where anyone can then take it up.
 
 This is the process that is followed by Intercom, my current company. This is also the process that is followed at other large companies like Amazon, Freshworks, [Gitlab][2] and Grab.
 
-Sometimes, you do fallback to explicit/implicit assignment. For example, when two people are pairing on a particular task they don't necessarily need someone else to code review. Or if you are working on a critical task and you think there is someone who is extremely relevant and should take a look, you can ask them for a review too.
+Sometimes, you do fall back to explicit/implicit assignment. For example, when two people are pairing on a particular task they don't necessarily need someone else to code review. Or if you are working on a critical task and you think there is someone who is extremely relevant and should take a look, you can ask them for a review too.
 
 ### What problems does this solve
 In my experience, this process has feature-parity with the previous one, or even improves on it:
-1. Go-to person for help? This is a little subjective but I would still like to mention that even in the absence of having someone explicitly assigned to help you, I found that you are still sufficiently supported by the team as a whole whenever you have a doubt. You can of course, ask if someone has the time to figure out a solution with you, and people will volunteer. This is very much dependent on your team's culture.
+1. Go-to person for help? This is a little subjective but I would still like to mention that even in the absence of having someone explicitly assigned to help you, I found that you are still sufficiently supported by the team as a whole whenever you have a doubt. You can, of course, ask if someone has the time to figure out a solution with you, and people will volunteer. This is very much dependent on your team's culture.
 2. Since you don't have an explicit assignee, there is less overall planning overhead. The moment a Pull Request is available, anyone who is waiting for their review to get done, or just not in the mood of working on a particular task, can take up the code review. And since people are spending this in-between time helping others get their work shipped (rather than starting a new task), this also helps limit WIP and ensures fast flow 💅.
 
 
@@ -62,7 +62,7 @@ It also addresses some of the aspects I found lacking in the previous system:
 ### What I wish could be better
 There is no silver bullet of course
 
-1. It needs more directed effort in setting the right culture, specially if you are moving from one process to another.
+1. It needs more directed effort in setting the right culture, especially if you are moving from one process to another.
     - You need to take care that people are giving importance to code reviews and leaving buffers in their days to account for that.
     - Some people might not be confident enough to take up a code review. You might need to address situations like these as well.
 2. Many times, no one might have volunteered to take up a review. It is common in those cases for people to directly ask someone to help them out. Even if you have to wait for someone to volunteer, I haven't seen reviews getting blocked by more than a few hours.
@@ -71,15 +71,15 @@ There is no silver bullet of course
 
 2. Consensus could be harder to achieve (_but if it is something controversial, maybe more heads are better than one?_)
 
-I find that it is worth putting in the effort to face these difficulties since the end result is either a better team, or a better decision.
+I find that it is worth putting in the effort to face these difficulties since the end result is either a better team or a better decision.
 
 
 ## Parting Words
 
-If you are someone who hasn't experienced the Volunteer based approach, I urge you to not be quick to dismiss it and make the same mistake as I did. I understand that it would be hard to bring about this change, but trying is free. Maybe the change will end up improving your team's experience and effectiveness by a noticeable amount..?<br>
+If you are someone who hasn't experienced the Volunteer-based approach, I urge you to not be quick to dismiss it and make the same mistake as I did. I understand that it would be hard to bring about this change, but trying is free. Maybe the change will end up improving your team's experience and effectiveness by a noticeable amount..?<br>
 Who knows? <sup>(hint: you can get to)</sup>
 
-If you decide to give it a shot, I suggest that you start small: try it out with only a few tasks to begin with. But don't judge too early, give it some time. Best case, you strike gold. Most likely non-best case, you get to see what all the fuss is about, and gain more confidence in your processes.
+If you decide to give it a shot, I suggest that you start small: try it out with only a few tasks, to begin with. But don't judge too early, give it some time. Best case, you strike gold. Most likely non-best case, you get to see what all the fuss is about and gain more confidence in your processes.
 
 If you have any experience, or opinions, in this matter, please reach out. I would love to listen to your experience and adjust my notions.
 
