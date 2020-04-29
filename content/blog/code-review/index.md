@@ -6,9 +6,9 @@ category: programming
 
 Disclaimer: I am not talking about what code reviews are, and how to do them well. There are plenty of good resources for that, eg: [link][1]. I am writing about the process a team follows before their code comes for review.
 
-For a long time, I thought there was only one way how teams ran their code reviews. This was based on my, rather limited, experience of working in a small company. Even when an ex-colleague told me about the process followed in their new job, I couldn't comprehend how this other system could work and dismissed it without giving it much thought.
+For a long time, I thought there was only one way how teams ran their code reviews. This was based on my, rather limited, experience of working in a small organization. Even when an ex-colleague told me about the process followed in their new job, I couldn't comprehend how this other system could work and dismissed it without giving it much thought.
 
-After recently moving to a _largeish_ company myself, I am on the other side now. This move has helped me experience a lot of alternate ways of doing the same things. One such is code reviews. Now that I have experienced this "other" process, I start to understand how it would work and how it could be useful for teams of 4 people or more. I now regret not trying this approach out in my previous team, and getting to see how it fares. Maybe I could have unlocked a whole level of effectiveness, knowledge sharing and efficiency for my team? Now we will never know 😬.
+After recently moving to a _largeish_ organization myself, I am on the other side now. This move has helped me experience a lot of alternate ways of doing the same things. One such is code reviews. Now that I have experienced this "other" process, I start to understand how it would work and how it could be useful for teams of 4 people or more. I now regret not trying this approach out in my previous team, and getting to see how it fares. Maybe I could have unlocked a whole level of effectiveness, knowledge sharing and efficiency for my team? Now we will never know 😬.
 
 My intention in this article is to introduce people, with a similar experience as mine, to this other system of running code reviews. I do not know if there are more common ways of referring to these systems, so I am going to make up some headings. Please 🐻 with me.
 
@@ -41,11 +41,11 @@ Whenever a new piece of work is taken up, it is (mostly) assigned to a single pe
 
 Sometimes you might fall back to explicit/implicit assignment. For example, when two people are pairing on a particular task, they don't necessarily need someone else for reviews. Or if you are working on a critical task and you think a specific person is extremely relevant and should take a look, you can ask them for a review directly.
 
-This is the process that is followed by Intercom, my current company. This is also the process that is followed at other large companies like Amazon, Freshworks, [Gitlab][2] and Grab.
+This is the process that is followed by Intercom, my current job. This is also the process that is followed at other large companies like Amazon, Freshworks, [Gitlab][2] and Grab.
 
 ### What I like about this process
 1. Even in the absence of someone explicitly assigned to help you, I found that you are still sufficiently supported by the team as a whole whenever you have a doubt. But this is very much dependent on your team's culture, and thus subjective.
-2. **Since there are no explicit reviewers, there is less coordination overhead**. People pick up code reviews whenever they are blocked on something (like getting their own code reviewed, or they are between meetings, waiting on I/O, or they just don't want to write more code). This also means that the team tends to close open streams of work before taking up new ones, which helps limit WIP and ensures fast flow 💅.
+2. **Since there are no explicit reviewers, there is less coordination overhead**. People pick up code reviews whenever they are blocked on something (like getting their own code reviewed, or they are between meetings, waiting on I/O, or they just don't want to write more code). This also means that the team tends to close open streams of work before taking up new ones, which helps limit WIP and ensures fast flow.
 3. **There is one clear owner and no ambiguity about the ownership of the work**.
 4. **Increased [Bus Factor][6]** as different people get to review different parts of the system, resulting in a more even knowledge distribution.
 
@@ -64,7 +64,9 @@ This is the process that is followed by Intercom, my current company. This is al
 
 ## Parting Words
 
-If you are someone who hasn't experienced this Volunteer-based approach, I urge you to not be quick to dismiss it, making the same mistake I did. I understand that it would be hard to bring about this change... but trying is free.
+If you are someone who hasn't experienced this volunteer-based approach, I urge you to not be quick to dismiss it, making the same mistake I did.
+
+I understand that it would be hard to bring about this change. I also understand that a process that works for some organizations might not work for others. There are a lot of factors in play: the kind of workload, size of the team, kind of experience the members have, if what you work on is always too context heavy or not, stage the organization is in etc. But I do find value in trying new things out.
 
 Who knows, maybe the change ends up positively affecting your team's stress levels, increasing the quality and throughput, and making everyone more happy...?<br>
 Who knows? <sup>(hint: you can get to)</sup>
