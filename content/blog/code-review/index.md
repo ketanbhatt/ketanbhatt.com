@@ -64,7 +64,7 @@ This is the process that is followed by Intercom, my current job. This is also t
 
 ## Parting Words
 
-If you are someone who hasn't experienced this volunteer-based approach, I urge you to not be quick to dismiss it, making the same mistake I did.
+If you are someone who hasn't experienced this volunteer-based approach, I urge you to not be quick to dismiss it, making the same mistake I did (based on the reactions from people I have talked to this about, you are a difficult crowd 😬).
 
 I understand that it would be hard to bring about this change. I also understand that a process that works for some organizations might not work for others. All the pros and cons might not apply to every situation equally. There are a lot of factors in play: the kind of workload, size of the team, kind of experience the members have, if what you work on is always too context heavy or not, stage the organization is in etc. But I do find value in trying new things out.
 
