@@ -4,6 +4,7 @@ import Disqus from 'gatsby-plugin-disqus'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SubscribeForm from "../components/subscribe"
 import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -68,6 +69,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           }}
         />
       </article>
+
+      <SubscribeForm/>
 
       <nav>
         {relatedPostsHtml}
