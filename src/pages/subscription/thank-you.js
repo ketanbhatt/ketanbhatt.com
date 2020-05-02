@@ -26,8 +26,7 @@ const ThankYouPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Subscription confirmed!" />
       <h1>Thank You!</h1>
-      <p>You're officially confirmed and on the list.</p>
-      <p>Expect some great emails headed your way very soon.</p>
+      <p>You're officially confirmed and on the list. Expect some great emails headed your way very soon.</p>
       {relatedPostsHtml}
     </Layout>
   )
