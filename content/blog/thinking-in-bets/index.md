@@ -18,7 +18,7 @@ Explicitly calling our decisions bets lets us anticipate and prepare for situati
 
 ### Beware of "Resulting"
 
-"Decision quality" and "Result quality" are different. We have a tendency of judging the decision based on the outcome. If the outcome was good, it was a good decision, and if the outcome was bad, it would have been a bad decision. **This is called Resulting.**.
+"Decision quality" and "Result quality" are different. We have a tendency of judging the decision based on the outcome. If the outcome was good, it was a good decision, and if the outcome was bad, it would have been a bad decision. **This is called Resulting**.
 
 Most of the times it will be true, the outcome and the decision will be related to each other. But still, I found it to be a good mental model to have in your kitty. Sometimes we might evaluate a decision to be wrong because the result was bad, but the result could have been bad because of sheer luck as well. That doesn't mean we should not take that decision again. Breaking down the decision process into Decision and Result quality paves tha path for more accurate analysis of your decisions, and can allow you to learn more from them.
 
