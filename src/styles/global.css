@@ -38,5 +38,5 @@ a.formkit-powered-by {
 }
 
 .formkit-form [data-style="minimal"] {
-  padding: 20px !important;
+  padding: 0 20px 10px 20px !important;
 }
