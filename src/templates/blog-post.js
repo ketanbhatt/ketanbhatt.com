@@ -85,14 +85,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           }}
         >
           <li>{previous && (<p>←</p>)}</li>
-          <li style={{width: rhythm(10)}}>
+          <li style={{width: rhythm(13)}}>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
                 {previous.frontmatter.title}
               </Link>
             )}
           </li>
-          <li style={{width: rhythm(10), textAlign: `right`}}>
+          <li style={{width: rhythm(13), textAlign: `right`}}>
             {next && (
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title}
@@ -119,7 +119,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 280)
       html
       frontmatter {
         title

@@ -7,7 +7,13 @@ var formHtml = `<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 class SubscribeForm extends React.Component {
   render() {
     return (
-      <section dangerouslySetInnerHTML={{ __html: formHtml }} />
+      <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+      }}>
+        <section dangerouslySetInnerHTML={{ __html: formHtml }} />
+      </div>
     );
   }
 }
