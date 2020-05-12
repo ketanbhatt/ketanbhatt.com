@@ -5,7 +5,7 @@ category: programming
 draft: true
 ---
 
-How do databases work? Want to write in a manner so that everyone can understand, and so that I deeply understand. If I can explain it to a 5 year old, that means I know it now. Write for Chetan.
+How do databases work? Want to write in a manner so that everyone can understand, and so that I deeply understand. If I can explain it to a 5 year old, that means I know it now. Write for Chetan Bhatt.
 
 We will talk about transactions, what they are. What guarantees does the database provide. What are some faults that transactions guard against. And how does the database implement different isolation levels.
 
