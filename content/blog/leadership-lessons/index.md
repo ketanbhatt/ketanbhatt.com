@@ -64,7 +64,7 @@ We, as engineers, have an inherent inclination towards execution. It becomes eas
 2. The other teams lose sight over what is going on with your team
 3. You catch hold of issues, that can jeopardise the goals, too late. Course correction becomes harder.
 
-Learning from mistakes and guidance from my lead, **here is a suggestion: build yourself an** **[Event Loop](https://s3.amazonaws.com/marquee-test-akiaisur2rgicbmpehea/dgVXCQ87Ry2aeL7OKJyu_Screen%20Shot%202015-07-16%20at%2011.43.16%20AM.png)****, and block your time explicitly for following it**. We got this from a [FirstRound Post by David Loftesness](http://firstround.com/review/this-90-day-plan-turns-engineers-into-remarkable-managers/) which is a must read if you are making the transition for a developer to a managerial role.
+Learning from mistakes and guidance from my lead, **here is a suggestion: build yourself an [Event Loop](https://s3.amazonaws.com/marquee-test-akiaisur2rgicbmpehea/dgVXCQ87Ry2aeL7OKJyu_Screen%20Shot%202015-07-16%20at%2011.43.16%20AM.png), and block your time explicitly for following it**. We got this from a [FirstRound Post by David Loftesness](http://firstround.com/review/this-90-day-plan-turns-engineers-into-remarkable-managers/) which is a must read if you are making the transition for a developer to a managerial role.
 
 A lot of us follow something of this sort already, I found that making it explicit just works better for me.
 
