@@ -17,7 +17,7 @@ In the past, I have referred to the articles I have written multiple times, and 
 3. To figure out indexes that a table has and the corresponding bloat percentage for each of them, you can use [this query](https://gist.github.com/mbanck/9976015/71888a24e464e2f772182a7eb54f15a125edf398) (we picked it up from [PgHero's codebase](https://github.com/ankane/pghero/blob/f1183eae03a0f6fca408b899c41476c9cebc627b/lib/pghero/methods/indexes.rb#L187)). We add a `table_name = 'my_sweet_table'` to the `WHERE` clause at the end of the query to only get the indexes for our table, but that is completely optional.
 4. You can also use a [simple query to get the definition of all the indexes for a table](https://gist.github.com/ketanbhatt/fdbd6246b4b1b7bb32009de5e468ed57). These definitions can be used as is when we want to recreate them.
 
-## Recreating Indexes supporting Foreign Key constraints
+## Recreating Indexes with Foreign Key constraints
 
 _Indexes that are not created for a constraint can be reindexed in the same way._
 
@@ -47,7 +47,7 @@ RENAME TO
 
 Also, if the index you are recreating is a unique index, you can add the keyword `UNIQUE` to the `CREATE INDEX` command.
 
-## Recreating Indexes supporting Unique constraints
+## Recreating Indexes with Unique constraints
 
 Recreate the Index, with the keyword `UNIQUE`.
 
@@ -72,7 +72,7 @@ USING INDEX
   new_uniq_idx;
 ```
 
-## Recreating Indexes supporting Primary Key constraints
+## Recreating Indexes with Primary Key constraints
 
 This is achieved in the same manner as we did for recreating the index for a unique constraint. The only difference is that this time the constraint that we add is a `PRIMARY KEY` constraint, of course :D
 
