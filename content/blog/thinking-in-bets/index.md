@@ -1,7 +1,8 @@
 ---
-title: "Notes: Thinking in Bets"
+title: "Thinking in Bets, by Annie Duke"
 date: "2020-04-18"
 category: self-improvement
+notes: true
 ---
 
 I recently finished reading [Thinking in Bets, by Annie Duke][1]. The world is in a critical situation 🦠, and what decisions we make in our personal and professional lives right now could be vital in how the future pans out for us. I decided to pick this book up to see if I can gather some ideas that can help me navigate my life better.

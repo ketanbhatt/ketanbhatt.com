@@ -4,6 +4,7 @@ date: "2018-12-10"
 redirect_from:
   - /2018/12/10/on-taking-feedback-well/
 category: self-improvement
+featured_index: 100
 ---
 
 A colleague and I were discussing how it is difficult to take critical feedback well. The conversation was textual and I ended up writing a lot of thoughts. In a bid to [save my keystrokes from dying](https://jamesclear.com/keystrokes), I thought I will pen down my thoughts here so that I can share them with peeps whenever I want to, plus it makes it easier for me to come back to these ideas.

@@ -4,6 +4,7 @@ date: "2018-08-12"
 redirect_from:
   - /2018/08/12/dont-be-the-alpha-geek-your-team-deserves-better/
 category: self-improvement
+featured_index: 100
 ---
 
 ## Alpha Geek?

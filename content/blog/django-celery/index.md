@@ -4,6 +4,7 @@ date: "2017-12-17"
 redirect_from:
   - /2017/12/17/two-years-with-celery-in-production-bug-fix-edition/
 category: programming
+featured_index: 100
 ---
 
 ![Ladybug in grass](./images/cover.png)

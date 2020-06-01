@@ -4,6 +4,7 @@ date: "2017-05-14"
 redirect_from:
   - /2017/05/14/blazingly-fast-querying-on-huge-tables-by-avoiding-joins/
 category: programming
+featured_index: 100
 ---
 
 ![Cover Image](./images/cover.png)

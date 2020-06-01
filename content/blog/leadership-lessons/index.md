@@ -4,6 +4,7 @@ date: "2018-05-06"
 redirect_from:
   - /2018/05/06/how-i-stopped-being-awful-at-managing-leadership-lessons-from-a-dev/
 category: management
+featured_index: 100
 ---
 
 At [Squad](https://www.squadplatform.com/), we have been following the concept of having small inter-disciplinary teams, which we call Solver Teams (the concept is beautifully [explained by Spotify](https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/), we took a lot of inspiration from them). As fate would have it, I got to lead a team responsible for building the Machine Learning platform for Squad, from scratch.

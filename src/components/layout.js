@@ -10,43 +10,69 @@ const Layout = ({ location, title, children }) => {
 
   let header
 
+  let subMenu = (
+    <h4
+      style={{
+        marginTop: rhythm(1 / 2)
+      }}
+    >
+      {(location.pathname !== rootPath) && (<span><Link to={`/`}>Home</Link>{' '}&bull;{' '}</span>)}
+      <Link to={`/about`}>About</Link>
+      {' '}&bull;{' '}<Link to={`/archive`}>Archive</Link>
+      {' '}&bull;{' '}<Link to={`/notes`}>Notes</Link>
+    </h4>
+  )
+
   if (location.pathname === rootPath) {
     header = (
-      <h1
+      <div
         style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
+          borderBottom: `1px solid hsla(0,0%,0%,0.07)`
         }}
       >
-        <Link
+        <h1
           style={{
-            boxShadow: `none`,
-            color: `inherit`,
+            ...scale(1.5),
+            marginBottom: 0,
+            marginTop: 0,
+            borderBottom: 0
           }}
-          to={`/`}
         >
-          {title}
-        </Link>
-      </h1>
+          <Link
+            style={{
+              boxShadow: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h1>
+
+        {subMenu}
+      </div>
     )
   } else {
     header = (
-      <h3
-        style={{
-          marginTop: 0,
-        }}
-      >
-        <Link
+      <div>
+        <h3
           style={{
-            boxShadow: `none`,
-            color: `inherit`,
+            marginTop: 0,
           }}
-          to={`/`}
         >
-          {title}
-        </Link>
-      </h3>
+          <Link
+            style={{
+              boxShadow: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h3>
+
+        {subMenu}
+      </div>
     )
   }
 

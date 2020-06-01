@@ -11,11 +11,12 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Home" />
+
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug} style={{paddingBottom: rhythm(0.5)}}>
+          <article key={node.fields.slug} style={{paddingBottom: rhythm(0)}}>
             <header>
               <h3
                 style={{
@@ -54,8 +55,8 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: {frontmatter: {draft: {ne: true}}},
-      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {frontmatter: {draft: {ne: true}, featured_index: {gte: 0}}},
+      sort: { fields: [frontmatter___featured_index, frontmatter___date], order: [ASC, DESC] }
       ) {
       edges {
         node {
