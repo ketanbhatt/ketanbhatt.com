@@ -5,6 +5,8 @@ category: management
 notes: true
 ---
 
+I just finished reading [The Nature of Software Development, by Ron Jeffries][1]. While the book didn't teach me a whole lot of new things, it reminded me of the way things are supposed to be done. The author's writing style makes you feel you are talking to a mentor over coffee who is sharing his knowledge and experience with you, sketching on a napkin whenever necessary.
+
 Ron introduces a simple notion of **"The Natural Way"** of Software Development: **Focus on delivering value early and often**.
 
 ![Software is Lava, but a natural way exists](./images/software-is-lava.jpg)
@@ -135,3 +137,5 @@ Write automated tests.
 - To keep progress steady, we have to avoid building twisty little passages, and when we do build then, we need to straighten them out.
 
 Fin.
+
+[1]: https://www.goodreads.com/book/show/23016056-the-nature-of-software-development
