@@ -17,9 +17,9 @@ const Layout = ({ location, title, children }) => {
       }}
     >
       {(location.pathname !== rootPath) && (<span><Link to={`/`}>Home</Link>{' '}&bull;{' '}</span>)}
-      <Link to={`/about`}>About</Link>
-      {' '}&bull;{' '}<Link to={`/archive`}>Archive</Link>
-      {' '}&bull;{' '}<Link to={`/notes`}>Notes</Link>
+      {/* <Link to={`/about`}>About</Link>{' '}&bull;{' '} */}
+      <Link to={`/archive`}>Archive</Link>{' '}&bull;{' '}
+      <Link to={`/notes`}>Notes</Link>
     </h4>
   )
 
