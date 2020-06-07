@@ -15,7 +15,7 @@ const ArchivePage = ({ data, location }) => {
       <SEO title="Archive" />
       <h1>Archive</h1>
 
-      <SubscribeForm/>
+      <SubscribeForm formIdentifier='archive' />
       <br/>
 
       <ul>

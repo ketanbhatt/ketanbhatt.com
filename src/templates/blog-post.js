@@ -70,7 +70,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         />
       </article>
 
-      <SubscribeForm/>
+      <SubscribeForm formIdentifier={post.frontmatter.category} />
 
       <nav>
         {relatedPostsHtml}
