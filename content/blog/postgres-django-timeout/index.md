@@ -74,3 +74,9 @@ The benefit of this approach is:
 The changes mentioned here gives us more control over our queries and we can selectively restrict our systems in case there is a 🔥 that needs strict actions to be taken to keep the more important parts of the app alive (_not the best solution, but sometimes they don’t have to be_ 😃) .
 
 (Originally [posted on my Medium account](https://medium.com/squad-engineering/configure-postgres-statement-timeouts-from-within-django-6ce4cd33678a))
+
+<br>
+---
+
+##### UPDATE: Jun 2020
+[Haki Benita](https://hakibenita.com/pages/about) was kind enough to provide feedback on this article. Here is a link to what he suggested: [Haki Benita's comment on Medium](https://medium.com/p/a3755acdf195/responses/show). If you are learnt from or liked this article, you should definitely read Haki's feedback as well.
