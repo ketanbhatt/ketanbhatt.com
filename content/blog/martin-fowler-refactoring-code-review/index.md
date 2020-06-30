@@ -3,7 +3,6 @@ title: "Get your code reviewed by Martin Fowler, kinda"
 date: "2020-06-30"
 category: programming
 featured_index: 100
-draft: true
 ---
 
 I picked up [Refactoring, by Martin Fowler](https://martinfowler.com/books/refactoring.html), and I am learning a lot. The book is written like a catalogue that you can refer back to later. And, for those who are seeking, **the book is an excellent chance to get your code reviewed by Martin Fowler!!** 😮
