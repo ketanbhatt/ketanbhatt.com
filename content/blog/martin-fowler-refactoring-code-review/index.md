@@ -13,13 +13,15 @@ If you are someone who enjoys this, I highly recommend you give this a try too. 
 
 # The Original Code, and provided Context
 
-We have a Theatre Company that perform plays in events. They charge customers based on the type of the play, and also provide a "Volume Credit" for future discounts. The Company stores data about their plays ([plays.json](https://gist.github.com/ketanbhatt/545ac19299f6b6e4873d6193d7c18e97#file-plays-json)) and bills ([invoices.json](https://gist.github.com/ketanbhatt/545ac19299f6b6e4873d6193d7c18e97#file-invoices-json)) in JSON files.
+***(Psssst... You can find the full original code here: [Github](https://github.com/ketanbhatt/refactoring-rb/tree/master/chapter-1/a_first_example/original))***
+
+We have a Theatre Company that perform plays in events. They charge customers based on the type of the play, and also provide a "Volume Credit" for future discounts. The Company stores data about their plays ([plays.json](https://github.com/ketanbhatt/refactoring-rb/blob/master/chapter-1/a_first_example/original/plays.json)) and bills ([invoices.json](https://github.com/ketanbhatt/refactoring-rb/blob/master/chapter-1/a_first_example/original/invoices.json)) in JSON files.
 
 The simple code below is used to print a bill from an invoice. This is the code we will attempt to refactor. Assume that this code is part of a much larger system and we are refactoring while adding a feature to print bills in HTML. Moreover, the Company has plans to perform more types of plays in the future.
 
-#### /statement.rb
-
 ```ruby
+# statement.rb
+
 require 'json'
 
 def statement(invoice, plays)
@@ -83,6 +85,8 @@ You earned 47 credits
 
 # My attempt at Refactoring
 
+***(Psssst... You can find the refactored code here: [Github](https://github.com/ketanbhatt/refactoring-rb/tree/master/chapter-1/a_first_example/ketanbhatt))***
+
 Reading through the code, this is what stood out for me:
 
 1. The `statement` method returns a formatted text right now. I would like it to return a structured statement that I can format later as I wish, for example: for sending Slack notifications, emails. Additionally, it simplifies writing tests for this and the formatter methods.
@@ -91,18 +95,17 @@ Reading through the code, this is what stood out for me:
 4. The method is doing too much, calculating `volume_credit` and `amount` for each type of play, and creating the text. It would be better if I can hand over this calculation to a different class that would do the needful, and my method just creates the text.
 5. Because of this "doing too much", the code has become messy. It will become still messier if the calculation was different for each Play too (and not same for Plays of the same type).
 6. Also, looks like that the calculation is in cents and is being converted to dollars in the text. The code should make this explicit. Maybe I could rename the variable to be `amount_in_cents`?
-7. The code right now assumes `audience` to be present and be a number. Maybe we should put in validations that `asserts` for this truth? Although it seems out of scope for our current exercise.
+7. The code right now assumes `audience` to be present and to be a number. Maybe we should put in validations that `asserts` for this truth? Although it seems out of scope for our current exercise.
 
-## Changes that I made
+### Extract out the Calculation logic
 
-1. Moved the code for calculating amount and volume credits to a different class and file. I also separated the calculation for the two types of plays. In the future, adding new play types will just need a new class to be added.
-2. Implemented the calculation in a more verbose manner. I think this improves the readability of the code.
-3. The original `statement` method is now `text_statement` and all it does is format the bill as needed. A new method, `html_statement` can now be defined similarly to format the bill in HTML.
+I moved the code for calculating amount and volume credits to a different class and file. I also separated the calculation for the two types of plays.
 
-
-#### /statement_calculators.rb
+In the future, adding new play types will just need a new class to be added.
 
 ```ruby
+# statement_calculators.rb
+
 class PlayTypeBaseStatementCalculator
   def initialize(play_id:, audience:)
     @play_id = play_id
@@ -117,6 +120,22 @@ class PlayTypeBaseStatementCalculator
     raise NotImplementedError
   end
 end
+
+class TragedyStatementCalculator < PlayTypeBaseStatementCalculator
+  ...
+end
+
+class ComedyStatementCalculator < PlayTypeBaseStatementCalculator
+  ...
+end
+```
+<br>
+I also implemented the calculation in a more verbose manner. I think this improves the readability of the code.
+
+```ruby
+# statement_calculators.rb
+
+...
 
 class TragedyStatementCalculator < PlayTypeBaseStatementCalculator
   def amount
@@ -169,6 +188,16 @@ class ComedyStatementCalculator < PlayTypeBaseStatementCalculator
     credits
   end
 end
+```
+
+### Return the right calculator for a Play
+
+I wanted to separate out the logic behind fetching the right calculator for a play, so I created a getter for it.
+
+```ruby
+# statement_calculators.rb
+
+...
 
 def get_calculator(play, performance)
   audience = performance['audience']
@@ -183,6 +212,18 @@ def get_calculator(play, performance)
     raise Exception
   end
 end
+```
+
+### Calculate the Statement
+
+Keeping calculation out of the formatting logic, I created a method that loops over the invoices, and generates a structure containing information about the bill.
+
+This structured statement can now be used by any formatter.
+
+```ruby
+# statement_calculators.rb
+
+...
 
 def calculate_statement(invoice, plays)
   statement_hash = { performances: [] }
@@ -212,9 +253,13 @@ def calculate_statement(invoice, plays)
 end
 ```
 
-#### /statement.rb
+### Finally, generate the Bill
+
+The original `statement` method is now `text_statement` and all it does is format the bill as needed. A new method, `html_statement` can now be defined similarly to format the bill in HTML.
 
 ```ruby
+# statement.rb
+
 require 'json'
 
 require './statement_calculators'
@@ -237,14 +282,12 @@ end
 def html_statement(invoice, plays)
   nil
 end
-
-plays_json = JSON.parse(File.read('./plays.json'))
-invoices_json = JSON.parse(File.read('./invoices.json'))
-result = text_statement(invoices_json.first, plays_json)
-puts result
 ```
+
 <br>
-I can't help but notice a bad feeling leaving the code at this stage. I don't think I am too happy with the changes 😕 There is something more that can be done. Let's see what Sir Martin has to say.
+I will call the refactoring done at this point.
+
+Although, I can't seem to shake off this feeling that there is something more that can be done. I don't think I am completely happy with the changes 😕 Let's see what Sir Martin has to say.
 <br><br>
 
 <center>
@@ -256,10 +299,10 @@ I can't help but notice a bad feeling leaving the code at this stage. I don't th
 
 # Code Review, courtesy Martin Fowler
 
-The process that Martin followed for refactoring the original code was:
-1. Decomposing the original function into a set of nested functions
-2. Separate calculating and printing code, the two phases.
-3. Introducing a polymorphic calculator for the calculation logic.
+The process that Martin followed for refactoring the original code, in his words, was:
+> 1. Decomposing the original function into a set of nested functions
+> 2. Separate calculating and printing code, the two phases.
+> 3. Introducing a polymorphic calculator for the calculation logic.
 
 <br>
 
@@ -270,40 +313,77 @@ From what I have learnt in this chapter, in the **hypothetical scenario** in whi
 
 # Code after addressing Martin's comments
 
-## Changes that I made
+***(Psssst... You can find the final refactored code here: [Github](https://github.com/ketanbhatt/refactoring-rb/tree/master/chapter-1/a_first_example/ketanbhatt_martin_reviewed))***
 
-Based on Martin's comments and how he went about his refactoring, this is what I did
 
-1. I am now passing complete `performance` and `play` objects to the calculator class. This is easier for the callers now as they can simply pass what they have, and the calculation logic can make use of what it needs.
-    1. I had previously opted to explicitly pass only those arguments that the `Calculator` class needed, and there is some argument for doing it this way. Example: The caller doesn't know anymore what is it that the `Calculator` class actually needs, we might mistakenly send a dictionary without the required values.
-    2. But if this is a problem, I don't think making the caller do extra work is the solution. Either the `Calculator` class should validate the input it is getting, or this validation should be done while creating `performance` and `play` objects, or both.
-2. Changed the base `volume_credits` method to implement the part that is common to both types of play.
-    1. I had previously opted to not do this because I thought it might be over-abstraction.
-    2. But after seeing Martin's implementation, I find this current version to be much better. It makes the code easier to understand. The reader can just say, _"Okay, so we are doing what we do for all the types PLUS this extra thing."_
-3. Renamed the classes. My names were too verbose and I didn't like them a lot too. I liked the names Martin gave his classes better.
-4. Re-implemented `amount` and `volume_credits` methods in the `Calculator` classes. I think I went overboard with the verbosity and didn't strike a good balance. I opted for longer names, that "felt" more readable/explanatory but, they had the opposite effect when I zoomed out.
-    1. I think the actual calculations were simple enough and just the expressions would do a good job explaining what is happening. I tried making it more readable by introducing variables to make the code self-documenting, but I now think that it was counterproductive.
-5. While in flow of making these above mentioned changes, I also made some minor modifications to the `calculate_statement` method.
-    1. Instead of looping over all the statements at the end to calculate the `total_sum` and `total_volume_credits`, I simply maintained a variable that I updated in each iteration of the loop and added that to my dictionary at the end.
-    2. This I think makes the intention clearer, and the reader won't have to go through the `reduce` loop over again. `total_amount += perf_statement[:amount]` is beautifully simple.
+Based on Martin's comments and how he went about his refactoring, these are the changes I made to my code
 
-#### /statement_calculators.rb
+### Rename the Calculator classes
+
+I renamed the calculator classes. My names were too verbose and I didn't like them a lot. I liked the names Martin gave his classes better.
 
 ```ruby
+# statement_calculators.rb
+
+class StatementCalculator
+  ...
+end
+
+class TragedyCalculator < StatementCalculator
+  ...
+end
+
+class ComedyCalculator < StatementCalculator
+  ...
+end
+
+...
+
+```
+
+### Pass complete objects to the Calculator class
+
+I am now passing complete `performance` and `play` objects to the calculator class. This is easier for the callers now as they can simply pass what they have, and the calculation logic can make use of what it needs.
+  1. I had previously opted to explicitly pass only those arguments that the `Calculator` class needed, and there is some benefit to it. For example: It becomes clearer what information `Calculator` needs. But then it can be argued that the caller doesn't need to know how the `Calculator` class works?
+  2. If we are fearful of introducing breaking changes by omitting certain values from the passed object, values that the class might need, I don't think making the caller do extra work is the solution. Either the `Calculator` class should validate the input it is getting, or this validation should be done while creating these objects, or both.
+
+```ruby
+# statement_calculators.rb
+
 class StatementCalculator
   def initialize(play, performance)
     @play_id = play['play_id']
     @audience = performance['audience']
   end
+  ...
+end
 
-  def amount
-    raise NotImplementedError
-  end
+...
 
-  def volume_credits
-    [@audience - 30, 0].max
+def get_calculator(play, performance)
+  case play['type']
+  when 'tragedy'
+    TragedyCalculator.new(play, performance)
+  when 'comedy'
+    ComedyCalculator.new(play, performance)
+  else
+    raise Exception
   end
 end
+```
+
+### Simplify `amount` and `volume_credits` implementations
+
+I re-implemented `amount` and `volume_credits` methods in the `Calculator` classes. I think I went overboard with the verbosity earlier and didn't strike a good balance. I opted for longer names, that "felt" more readable/explanatory but, they had the opposite effect when I zoomed out.
+
+The actual calculations were simple enough and just the expressions would do a good job explaining what is happening. I tried making it more readable by introducing variables to make the code self-documenting, but I now think that it was counterproductive.
+
+I also realise that this is closer to the original definition of these methods, and I wasted my time for nothing. But hey, you wouldn't know until you tried.
+
+```ruby
+# statement_calculators.rb
+
+...
 
 class TragedyCalculator < StatementCalculator
   def amount
@@ -311,6 +391,10 @@ class TragedyCalculator < StatementCalculator
     result += 1000 * (@audience - 30) if @audience > 30
 
     result
+  end
+
+  def volume_credits
+    [@audience - 30, 0].max
   end
 end
 
@@ -324,20 +408,61 @@ class ComedyCalculator < StatementCalculator
   end
 
   def volume_credits
+    base_credits = [@audience - 30, 0].max
+    base_credits + (@audience / 5).floor
+  end
+end
+
+...
+
+```
+
+### Implement `volume_credits` in the parent Calculator class
+
+I changed the base `volume_credits` method to implement the part that is common to both types of play.
+  1. I had previously opted to not do this because I thought it might be over-abstraction.
+  2. But after seeing Martin's implementation, I find this current version to be much better. It makes the code easier to understand. The reader can just say, _"Okay, so we are doing what we do for all the types PLUS this extra thing."_
+
+
+```ruby
+# statement_calculators.rb
+
+class StatementCalculator
+  ...
+  def volume_credits
+    [@audience - 30, 0].max
+  end
+end
+
+class TragedyCalculator < StatementCalculator
+  ...
+  # remove the definition of `volume_credits` here
+end
+
+class ComedyCalculator < StatementCalculator
+  ...
+  def volume_credits
     super + (@audience / 5).floor
   end
 end
 
-def get_calculator(play, performance)
-  case play['type']
-  when 'tragedy'
-    TragedyCalculator.new(play, performance)
-  when 'comedy'
-    ComedyCalculator.new(play, performance)
-  else
-    raise Exception
-  end
-end
+...
+
+```
+
+### Calculate totals within the loop in `calculate_statement`
+
+While in flow of making these above mentioned changes, I also made some minor modifications to the `calculate_statement` method.
+  1. Instead of looping over all the statements at the end to calculate the `total_sum` and `total_volume_credits`, I simply maintained a variable that I updated in each iteration of the loop and added that to my dictionary at the end.
+  2. This I think makes the intention clearer, and the reader won't have to go through the `reduce` loop over again. `total_amount += perf_statement[:amount]` is beautifully simple.
+
+Yes, I should have done this the first time itself 🤷‍♂️
+
+
+```ruby
+# statement_calculators.rb
+
+...
 
 def calculate_statement(invoice, plays)
   statement_hash = { customer: invoice['customer'], performances: [] }
@@ -370,10 +495,9 @@ def calculate_statement(invoice, plays)
 end
 ```
 
-#### /statement.rb
+<br>
 
-No change was made, the code here is the same as before.
-
+😌 I can now shake off that bad feeling from earlier. I think we did good today 👍
 
 # In Closing
 
