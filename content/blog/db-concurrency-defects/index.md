@@ -24,9 +24,6 @@ Before we start, I want to quickly go over some basics so that a wider audience 
     - Roughly, if two or more transactions simultaneously access (read or write) the same data, these transactions will be considered concurrent. Based on what operations these transactions perform on the data, we might run into anomalous behaviour like losing writes, or reporting incorrect data, or permanently making the data inconsistent.
     - To get a better idea, take a look at this example: [Race condition example](https://en.wikipedia.org/wiki/Race_condition#Example)
 
-
-Today, we are going to learn about what Defects can occur due to Race Conditions, and characterise them. That is the first step towards avoiding them 😬
-
 I have strictly kept the scope of this article to be an introduction to defects that can occur because of concurrency. Resolving or avoiding these defects is a larger topic that I might discuss in a later post. For now, I just wanted to make the reader aware of these problems. Knowing that a problem exists is often the first step towards dealing with it.
 
 # Let's begin
