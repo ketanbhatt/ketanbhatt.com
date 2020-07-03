@@ -309,7 +309,7 @@ The process that Martin followed for refactoring the original code, in his words
 From what I have learnt in this chapter, in the **hypothetical scenario** in which Martin Fowler does a code review of my changes, this is what he would have to say:
 1. _"I like that you are using an intermediate structure to pass the calculation from one 'phase' to another. I also like that both of us are calling the new class a `Calculator`"_ - Thank you Martin, thank you. I try.
 2. _"Your methods might just be too verbose. Try implementing them without all that verbosity? Same with the class names."_ - 🗒
-3. _"You could also maybe implement the `volume_credits` method in the base class as there seems to be some code that can be reused"_ - 🗒
+3. *"You could also maybe implement the `volume_credits` method in the base class as there seems to be some code that can be reused"* - 🗒
 
 # Code after addressing Martin's comments
 
