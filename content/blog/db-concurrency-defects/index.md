@@ -68,6 +68,7 @@ Thankfully, dirty reads are prevented by default by all major databases.
 #### Related reads:
 - [Read Committed in Postgresql](https://www.postgresql.org/docs/current/transaction-iso.html#XACT-READ-COMMITTED)
 - [Read Committed in MySQL](https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html#isolevel_read-committed)
+- [MongoDB doesn't prevent dirty reads by default. Check out Read Uncommitted](https://docs.mongodb.com/manual/core/read-isolation-consistency-recency/#read-uncommitted)
 
 ## Dirty Write
 **Tl;dr: If a transaction can overwrite data written by another transaction that is not yet committed (or aborted), this read is called a "Dirty Write".**
@@ -99,6 +100,7 @@ Even though this works out fine for us in this case, this overwriting is still a
 #### Related reads:
 - [Read Committed in Postgresql](https://www.postgresql.org/docs/current/transaction-iso.html#XACT-READ-COMMITTED)
 - [Read Committed in MySQL](https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html#isolevel_read-committed)
+- [Read Uncommitted in MongoDB](https://docs.mongodb.com/manual/core/read-isolation-consistency-recency/#read-uncommitted)
 
 ## Read Skew
 **Tl;dr: A transaction (typically, long running) may read different parts of the database at different points in time causing a Read Skew.**
