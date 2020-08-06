@@ -19,7 +19,7 @@ Before we begin, this doesn't mean I have perfected this. These are just some id
 
 Thank god for the internet, [and impostor accounts](https://www.inc.com/justin-bariso/fake-warren-buffetts-twitter-feed-is-suddenly-sharing-secrets-to-a-fulfilling-life.html)! This quote has become a go-to for me whenever I feel that I am getting affected too much by what people have to say to me. Read it slooooooowly, and absoooooooorb it.
 
-Based on this insight, I started giving myself time to absorb critical feedback. A very common scenario is receiving a code review. Sometimes when I find myself having an emotional reaction to a review, I will just go through all the comments and not respond. I will take some time (maybe a few hours) and then come back to the review. Having the time to absorb the feedback and getting my emotions out of the way, I find myself become more accepting of both objective and subjective suggestions, and just be a nicer person overall 😬.
+Based on this insight, I started giving myself time to absorb critical feedback. A very common scenario is receiving a code review. Sometimes when I find myself having an emotional reaction to a review, I will just go through all the comments and not respond. I will take some time (maybe a few hours) and then come back to the review. Having the time to absorb the feedback and getting my emotions out of the way, I find myself become more accepting of both objective and subjective suggestions, and just be a nicer person overall 😬
 
 ## It is okay to be wrong
 
