@@ -17,7 +17,7 @@ If you are someone who enjoys this, I highly recommend you give this a try too. 
 
 We have a Theatre Company that perform plays in events. They charge customers based on the type of the play, and also provide a "Volume Credit" for future discounts. The Company stores data about their plays ([plays.json](https://github.com/ketanbhatt/refactoring-rb/blob/master/chapter-1/a_first_example/original/plays.json)) and bills ([invoices.json](https://github.com/ketanbhatt/refactoring-rb/blob/master/chapter-1/a_first_example/original/invoices.json)) in JSON files.
 
-The simple code below is used to print a bill from an invoice. This is the code we will attempt to refactor. Assume that this code is part of a much larger system and we are refactoring while adding a feature to print bills in HTML. Moreover, the Company has plans to perform more types of plays in the future.
+The simple code below is used to print a bill from an invoice. This is the code we will attempt to refactor. **Assume that this code is part of a much larger system and we are refactoring while adding a feature to print bills in HTML. Moreover, the Company has plans to perform more types of plays in the future.**
 
 ```ruby
 # statement.rb
