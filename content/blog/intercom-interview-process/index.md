@@ -9,6 +9,8 @@ category: programming
 **I interviewed at Intercom, Dublin, for a "Product Engineer" role in June - August, 2019.** I will be starting my Intercom journey on December 2nd, 2019 :D
 While preparing, I got a lot of help from [Glassdoor](https://www.glassdoor.co.in/Overview/Working-at-Intercom-EI_IE1035935.11,19.htm) and I thought of adding my interview experience to the internet too, for helping people in the future.
 
+**Update September 2020:** The world has changed a lot ever since I interviewed with Intercom. In order to compensate for this new normal, the interview process has been changed a little. The rounds, by themselves, will still be a lot similar to what I have mentioned below, but their arrangement might have changed. Intercom might also have replaced/merged/broken down rounds to make it easier for candidates applying remotely.
+
 Intercom's was one of the most thorough interview processes that I have experienced/heard about, and it's a good thing! It made me confident of the team I am going to be working with if all goes well. From what I could decipher from the rounds, Intercom is not only testing you technically, they also want to test you for your product skills and are judging if you will be a good addition to the team. They were also very responsive throughout the process, and the result of a round was shared within a week all the time (mostly within 3-4 days).
 
 Intercom has also written a lot of resources to help you prepare for the interview. For starters, you should checkout this: [How to prepare for software engineering interview questions](https://www.intercom.com/blog/software-engineering-interview-questions/). I will share links to Intercom's blogs wherever relevant.
