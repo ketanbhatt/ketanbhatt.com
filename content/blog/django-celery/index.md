@@ -10,6 +10,8 @@ featured_index: 100
 ![Ladybug in grass](./images/cover.png)
 *Photo by [Martin Oslic](https://unsplash.com/photos/Qi93Pl5vDRw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com)*
 
+**Update 6th Mar, 2022:** My friend and colleague Ayush Shanker recently published a follow-up post for most of the problems mentioned in this article. I recommend going through that post as well (or maybe just that post): "**[Celery in production: Three more years of fixing bugs](https://ayushshanker.com/celery-long-post/)**".
+
 As mentioned in an [earlier post](https://medium.com/squad-engineering/leveraging-aws-lambda-for-image-compression-at-scale-a01afd756a12), we rely on Celery for publishing and consuming tasks to/from our [RabbitMQ (RMQ)](https://www.rabbitmq.com/) broker. We are very happy with the whole setup and it works reliably for us. But this wasn’t exactly the case up until four weeks back. We were plagued with a plethora of issues which we hadn’t got down to fix, mostly because first, the number of issues was small, and the occurrences less frequent.
 
 But as the frequency and the types of issues increased, we started spending a lot of time in maintenance. I personally would have to keep an eye on the RMQ admin to see which queues weren’t being consumed properly, see if workers (we will use “workers” for celery workers or consumers) were still up or not stuck in an infinite restart loop. And every time I noticed something abnormal, I would have to restart the rogue worker/s manually.
