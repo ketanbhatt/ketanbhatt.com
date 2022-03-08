@@ -35,7 +35,7 @@ to something more readable:
 > I am going to try and backfill this table.
 > 
 > <details>
-> <summary>Running the backfill: (my blog is not rendering the ▶️ properly. Click on the text anywhere to unfurl the details)</summary>
+> <summary>Running the backfill: (my blog is not rendering the ▶️ properly. Click on the text anywhere to unfurl)</summary>
 > 
 > ```rb
 > [1] App(DEV)> Backfill.run(from: 2.years.ago)
@@ -49,16 +49,17 @@ to something more readable:
 > ```
 > </details>
 > 
+>
 > That worked!
 
   
-## Use Text Replacement (or other means) to make it easy to use
+## Use Text Replacement (or other means) to avoid typing the tags
   
 Even though I use this tag almost 5 times a day, and curse having to type so much to get the tag working, and get confused if it is `<details><summary></summary></details>` or `<summary><details></details></summary>` (don't blame me, they both make sense!), I never tried to improve my situation. Until today.
 
 Today I decided to [add a text replacement][2] on my machine that will automatically turn `ghdet` to the correct syntax. I wrote this post to point people to:
 1. the details tag and encourage them to use it
-2. make it easy for them to use it!
+2. make it easy for people to use the tag!
 
 You can add a `new line` character to the text to be replaced by pressing `option + return` while defining the replacement (yes, the same way you add a new line to any other app where pressing `return` would not help). 
 
