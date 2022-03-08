@@ -1,10 +1,13 @@
 ---
-title: "Using HTML details tag on Github easily"
-date: "2020-04-18"
+title: "Using <details> tag on Github easily"
+date: "2022-03-08"
 category: programming
 ---
 
 I am a big fan of using Github issues for taking notes on the steps I am taking while debugging a weird behaviour or verifying some changes I made, or anything else where having a record of the steps I took will help me or someone else in the future.
+  
+## Github supports HTML \<details\> tag
+  
 These issues tend to become long, specially because I paste logs or outputs of the code I am running. To make the issues (and comments) more readable, I use the [HTML \<details\> tag][1] heavily. This is, thankfully, supported by Github's flavour of Markdown.
 
 It turns long comments like:
@@ -26,12 +29,13 @@ It turns long comments like:
 >
 >That worked!
 
+  
 to something more readable:
 
 > I am going to try and backfill this table.
 > 
 > <details>
-> <summary>Running the backfill:</summary>
+> <summary>Running the backfill: (my blog is not rendering the ▶️ properly. Click on the text anywhere to unfurl the details)</summary>
 > 
 > ```rb
 > [1] App(DEV)> Backfill.run(from: 2.years.ago)
@@ -47,6 +51,9 @@ to something more readable:
 > 
 > That worked!
 
+  
+## Use Text Replacement (or other means) to make it easy to use
+  
 Even though I use this tag almost 5 times a day, and curse having to type so much to get the tag working, and get confused if it is `<details><summary></summary></details>` or `<summary><details></details></summary>` (don't blame me, they both make sense!), I never tried to improve my situation. Until today.
 
 Today I decided to [add a text replacement][2] on my machine that will automatically turn `ghdet` to the correct syntax. I wrote this post to point people to:
